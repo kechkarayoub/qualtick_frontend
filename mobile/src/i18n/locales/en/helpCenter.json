@@ -1,0 +1,46 @@
+{
+  "title": "Help Center",
+  "lastUpdated": "Last updated:",
+  "hero": {
+    "title": "Help Center",
+    "subtitle": "Search for help..."
+  },
+  "categories": {
+    "all": {
+      "name": "All Categories",
+      "description": "Browse all help topics",
+      "icon": "all"
+    },
+    "account": {
+      "name": "Account Settings",
+      "description": "Account settings, profile management",
+      "icon": "user"
+    },
+    "patients": {
+      "name": "Patients Management",
+      "description": "Creating and managing patient records",
+      "icon": "patients"
+    },
+    "technical": {
+      "name": "Troubleshooting",
+      "description": "App problems, bugs, connectivity",
+      "icon": "troubleshooting"
+    },
+    "billing": {
+      "name": "Billing & Payments",
+      "description": "Subscriptions, payments, invoices",
+      "icon": "billing"
+    },
+    "mobile": {
+      "name": "Getting Started",
+      "description": "Getting started and setup guides",
+      "icon": "mobile"
+    }
+  },
+  "contactSupport": {
+    "title": "Need More Help?",
+    "description": "Can't find what you're looking for? Our support team is here to help you with any questions or issues.",
+    "buttonText": "Contact Support",
+    "email": "{{supportEmail}}"
+  }
+}

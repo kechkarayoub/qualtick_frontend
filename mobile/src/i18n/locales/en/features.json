@@ -1,0 +1,67 @@
+{
+  "title": "Features",
+  "lastUpdated": "Last updated:",
+  "hero": {
+    "title": "Powerful Features for Healthcare Platforms",
+    "subtitle": "Everything you need to manage, organize, and deliver healthcare services"
+  },
+  "coreFeatures": {
+    "title": "Core Features",
+    "items": {
+      "patientManagement": {
+        "title": "Patient Management",
+        "description": "Manage patient records, track medical histories, monitor health statistics, and organize healthcare activities with ease.",
+        "icon": "team-management"
+      },
+      "appointmentScheduling": {
+        "title": "Appointment Scheduling",
+        "description": "Schedule patient appointments, medical consultations, and follow-up sessions. Send automated reminders and manage healthcare logistics seamlessly.",
+        "icon": "calendar"
+      },
+      "realtimeCommunication": {
+        "title": "Real-time Communication",
+        "description": "Stay connected with secure messaging, patient notifications, and healthcare team communication. Never miss important medical updates.",
+        "icon": "chat"
+      },
+      "performanceAnalytics": {
+        "title": "Performance Analytics",
+        "description": "Track detailed health statistics, analyze patient trends, and generate comprehensive reports for healthcare providers and patients.",
+        "icon": "analytics"
+      },
+      "treatmentManagement": {
+        "title": "Treatment Management",
+        "description": "Create and manage treatment plans with progress tracking, medication monitoring, and automated scheduling.",
+        "icon": "documents"
+      },
+      "mobileApplication": {
+        "title": "Mobile Application",
+        "description": "Access all features on the go with our native mobile apps for iOS and Android devices.",
+        "icon": "mobile"
+      }
+    }
+  },
+  "advancedFeatures": {
+    "title": "Advanced Features",
+    "items": {
+      "realtimeMonitoring": {
+        "title": "Real-time Health Monitoring",
+        "description": "Real-time vital signs monitoring, live health updates, and instant medical alert notifications.",
+        "icon": "clock"
+      },
+      "thirdPartyIntegrations": {
+        "title": "Third-party Integrations",
+        "description": "Connect with popular health devices, medical systems, and healthcare platforms for seamless data integration.",
+        "icon": "integration"
+      },
+      "advancedSecurity": {
+        "title": "Advanced Security",
+        "description": "Enterprise-grade security with data encryption, secure authentication, and privacy controls.",
+        "icon": "security"
+      }
+    }
+  },
+  "callToAction": {
+    "title": "Ready to Get Started?",
+    "description": "Join thousands of healthcare facilities already using Qualitick to manage their patients and medical services."
+  }
+}

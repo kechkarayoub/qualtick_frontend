@@ -1,0 +1,46 @@
+{
+  "title": "Centre d'aide",
+  "lastUpdated": "Dernière mise à jour :",
+  "hero": {
+    "title": "Centre d'aide",
+    "subtitle": "Rechercher de l'aide..."
+  },
+  "categories": {
+    "all": {
+      "name": "Toutes les catégories",
+      "description": "Parcourir tous les sujets d'aide",
+      "icon": "all"
+    },
+    "account": {
+      "name": "Paramètres du compte",
+      "description": "Paramètres du compte, gestion du profil",
+      "icon": "user"
+    },
+    "patients": {
+      "name": "Gestion des patients",
+      "description": "Création et gestion des dossiers patients",
+      "icon": "patients"
+    },
+    "technical": {
+      "name": "Dépannage",
+      "description": "Problèmes d'application, bugs, connectivité",
+      "icon": "troubleshooting"
+    },
+    "billing": {
+      "name": "Facturation et paiements",
+      "description": "Abonnements, paiements, factures",
+      "icon": "billing"
+    },
+    "mobile": {
+      "name": "Commencer",
+      "description": "Guides de démarrage et de configuration",
+      "icon": "mobile"
+    }
+  },
+  "contactSupport": {
+    "title": "Besoin de plus d'aide ?",
+    "description": "Vous ne trouvez pas ce que vous cherchez ? Notre équipe de support est là pour vous aider avec toutes vos questions ou problèmes.",
+    "buttonText": "Contacter le support",
+    "email": "{{supportEmail}}"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "authentication": {
+    "sessionExpired": "انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى."
+  },
+  "errorDescription": "حدث خطأ غير متوقع. يرجى تحديث الصفحة.",
+  "errorDetails": "تفاصيل الخطأ",
+  "general": {
+    "accessDenied": "الوصول مرفوض",
+    "badRequest": "طلب خاطئ",
+    "generic": "حدث خطأ ما",
+    "network": "حدث خطأ في الشبكة. يرجى التحقق من اتصالك.",
+    "resourceNotFound": "المورد غير موجود",
+    "serverError": "حدث خطأ في الخادم. يرجى المحاولة لاحقاً."
+  },
+  "goBack": "العودة",
+  "reloadPage": "إعادة تحميل الصفحة",
+  "unexpectedError": "حدث خطأ ما"
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Privacy Policy",
+  "lastUpdated": "Last updated:",
+  "introduction": {
+    "title": "Introduction",
+    "text": "At {{companyName}}, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our healthcare platform."
+  },
+  "informationWeCollect": {
+    "title": "Information We Collect",
+    "personalInfo": {
+      "title": "Personal Information",
+      "text": "We may collect personal information that you voluntarily provide to us when you register for an account, create a profile, connect with healthcare providers, or contact us. This may include:",
+      "items": [
+        "Name and contact information (email address, phone number)",
+        "Profile information (age, medical credentials, specializations)",
+        "Profile photos and other images you upload",
+        "Location information (if you choose to share it)"
+      ]
+    },
+    "automaticInfo": {
+      "title": "Automatically Collected Information",
+      "text": "We automatically collect certain information when you access and use our platform:",
+      "items": [
+        "Usage data and analytics",
+        "Device information and browser type",
+        "IP address and location data",
+        "Cookies and similar tracking technologies"
+      ]
+    }
+  },
+  "howWeUse": {
+    "title": "How We Use Your Information",
+    "text": "We use the information we collect for the following purposes:",
+    "items": [
+      "To provide, operate, and maintain our platform",
+      "To improve, personalize, and expand our services",
+      "To communicate with you and provide customer support",
+      "To help you connect with patients and healthcare providers",
+      "To send you notifications about your account and activities",
+      "To monitor and analyze usage patterns for security purposes",
+      "To comply with legal obligations and protect our rights"
+    ]
+  },
+  "yourRights": {
+    "title": "Your Privacy Rights",
+    "text": "You have the following rights regarding your personal information:",
+    "items": [
+      "Access and review your personal information",
+      "Correct inaccurate or incomplete information",
+      "Request deletion of your personal information",
+      "Restrict or object to certain processing of your information",
+      "Request data portability",
+      "Withdraw consent where applicable"
+    ]
+  },
+  "dataSecurity": {
+    "title": "Data Security",
+    "text": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure."
+  },
+  "changes": {
+    "title": "Changes to This Privacy Policy",
+    "text": "We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "text": "If you have any questions about this Privacy Policy or our privacy practices, please contact us:",
+    "email": "Email: {{supportEmail}}",
+    "address": "Address: {{companyAddress}}"
+  },
+  "footer": {
+    "text": "By using {{companyName}}, you acknowledge that you have read and understood this Privacy Policy and agree to the collection and use of your information as described herein."
+  }
+}

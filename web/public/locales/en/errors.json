@@ -1,0 +1,18 @@
+{
+  "authentication": {
+    "sessionExpired": "Your session has expired. Please sign in again."
+  },
+  "errorDescription": "An unexpected error occurred. Please try refreshing the page.",
+  "errorDetails": "Error Details",
+  "general": {
+    "accessDenied": "Access denied",
+    "badRequest": "Bad request",
+    "generic": "An error occurred",
+    "network": "Network error occurred. Please check your connection.",
+    "resourceNotFound": "Resource not found",
+    "serverError": "Server error occurred. Please try again later."
+  },
+  "goBack": "Go Back",
+  "reloadPage": "Reload Page",
+  "unexpectedError": "Something went wrong"
+}

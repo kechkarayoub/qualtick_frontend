@@ -1,0 +1,79 @@
+{
+  "title": "اتصل بنا",
+  "lastUpdated": "آخر تحديث:",
+  "hero": {
+    "title": "تواصل معنا",
+    "subtitle": "هل لديك أسئلة أو تحتاج للدعم؟ نحن هنا للمساعدة! أرسل لنا رسالة وسنقوم بالرد عليك في أقرب وقت ممكن."
+  },
+  "contactInfo": {
+    "title": "معلومات الاتصال",
+    "items": {
+      "email": {
+        "type": "email",
+        "title": "دعم البريد الإلكتروني",
+        "value": "{{supportEmail}}",
+        "description": "احصل على المساعدة مع حسابك أو الفواتير أو المشاكل التقنية",
+        "icon": "email"
+      },
+      "responseTime": {
+        "type": "response-time",
+        "title": "وقت الاستجابة",
+        "value": "خلال 24 ساعة",
+        "description": "نرد على جميع الاستفسارات خلال يوم عمل واحد",
+        "icon": "clock"
+      },
+      "support": {
+        "type": "support",
+        "title": "الدعم متاح",
+        "value": "الاثنين - الجمعة، 9 صباحاً - 6 مساءً EST",
+        "description": "فريق الدعم لدينا هنا للمساعدة خلال ساعات العمل",
+        "icon": "support"
+      }
+    }
+  },
+  "form": {
+    "title": "أرسل لنا رسالة",
+    "fields": {
+      "name": {
+        "name": "name",
+        "label": "الاسم الكامل",
+        "placeholder": "أدخل اسمك الكامل",
+        "type": "text",
+        "required": true
+      },
+      "email": {
+        "name": "email",
+        "label": "عنوان البريد الإلكتروني",
+        "placeholder": "أدخل عنوان بريدك الإلكتروني",
+        "type": "email",
+        "required": true
+      },
+      "subject": {
+        "name": "subject",
+        "label": "الموضوع",
+        "placeholder": "اختر موضوعاً",
+        "type": "select",
+        "required": true,
+        "options": {
+          "support": "الدعم التقني",
+          "billing": "الفواتير والحساب",
+          "feature": "طلب ميزة",
+          "partnership": "شراكة",
+          "other": "أخرى"
+        }
+      },
+      "message": {
+        "name": "message",
+        "label": "الرسالة",
+        "placeholder": "أخبرنا كيف يمكننا مساعدتك...",
+        "type": "textarea",
+        "required": true,
+        "minLength": 10
+      }
+    },
+    "submitText": "إرسال الرسالة",
+    "loadingText": "جاري الإرسال...",
+    "successTitle": "تم إرسال الرسالة بنجاح!",
+    "successMessage": "شكراً لاتصالك بنا. سنرد عليك خلال 24 ساعة."
+  }
+}

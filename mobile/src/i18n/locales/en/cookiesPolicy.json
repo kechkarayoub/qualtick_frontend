@@ -1,0 +1,95 @@
+{
+  "title": "Cookies Policy",
+  "lastUpdated": "Last updated:",
+  "introduction": {
+    "title": "What Are Cookies?",
+    "text": "This Cookies Policy explains how {{companyName}} uses cookies and similar tracking technologies when you visit our healthcare platform. We use cookies to enhance your experience, analyze usage patterns, and provide personalized healthcare content and services."
+  },
+  "whatAreCookies": {
+    "title": "Understanding Cookies",
+    "text": "Cookies are small text files that are stored on your device when you visit a website. They help websites remember information about your visit, such as your preferred settings and login status, which can make your next visit easier and the site more useful to you."
+  },
+  "typesOfCookies": {
+    "title": "Types of Cookies We Use",
+    "essential": {
+      "title": "Essential Cookies",
+      "text": "These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and accessibility.",
+      "items": [
+        "User authentication and session management",
+        "Security and fraud prevention",
+        "Basic website functionality and navigation",
+        "Your consent preferences for cookies"
+      ]
+    },
+    "performance": {
+      "title": "Performance Cookies",
+      "text": "These cookies collect information about how you use our website, helping us understand and improve performance.",
+      "items": [
+        "Website analytics and usage statistics",
+        "Error tracking and performance monitoring",
+        "Website optimization and A/B testing",
+        "Loading speed and performance metrics"
+      ]
+    },
+    "functional": {
+      "title": "Functional Cookies",
+      "text": "These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings.",
+      "items": [
+        "Language and region preferences",
+        "User interface settings and customizations",
+        "Personalized content and recommendations",
+        "Form data and user inputs"
+      ]
+    },
+    "targeting": {
+      "title": "Targeting Cookies",
+      "text": "These cookies are used to deliver relevant advertisements and marketing content based on your interests and behavior.",
+      "items": [
+        "Targeted advertising and marketing campaigns",
+        "Social media integration and sharing",
+        "Cross-site tracking and behavior analysis",
+        "Retargeting and remarketing campaigns"
+      ]
+    }
+  },
+  "managing": {
+    "title": "Managing Your Cookie Preferences",
+    "text": "You have several options for managing cookies on our website:",
+    "consent": {
+      "title": "Cookie Consent Banner",
+      "text": "When you first visit our website, you will see a cookie consent banner where you can choose which types of cookies to accept or reject."
+    },
+    "browser": {
+      "title": "Browser Settings",
+      "text": "You can control and delete cookies through your browser settings. Most browsers allow you to:",
+      "items": [
+        "View and delete existing cookies",
+        "Block cookies from specific websites",
+        "Disable all cookies (may affect website functionality)",
+        "Get notifications when cookies are set"
+      ]
+    }
+  },
+  "impact": {
+    "title": "Impact of Disabling Cookies",
+    "text": "Please note that disabling certain cookies may affect your experience on our website:",
+    "items": [
+      "Some features may not work properly or may be unavailable",
+      "Personalized content and recommendations may not be displayed",
+      "Your preferences and settings may not be remembered",
+      "We may not be able to improve our services based on usage patterns"
+    ]
+  },
+  "updates": {
+    "title": "Updates to This Policy",
+    "text": "We may update this Cookies Policy from time to time to reflect changes in technology, legislation, or our business practices. We will notify you of any significant changes by updating the \"Last updated\" date at the top of this policy."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "text": "If you have any questions about our use of cookies or this Cookies Policy, please contact us:",
+    "email": "Email: {{supportEmail}}"
+  },
+  "footer": {
+    "text": "By continuing to use {{companyName}}, you acknowledge that you have read and understood this Cookies Policy and consent to our use of cookies as described herein."
+  }
+}

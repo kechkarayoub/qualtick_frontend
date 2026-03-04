@@ -1,0 +1,15 @@
+{
+  "preferences": {
+    "description": "Customize your application preferences.",
+    "language": "Language",
+    "save": "Save Preferences",
+    "selectLanguage": "Select language",
+    "selectTimezone": "Select timezone",
+    "theme": "Theme",
+    "timezone": "Timezone",
+    "title": "Preferences",
+    "updateSuccess": "Settings updated successfully",
+    "updateError": "Failed to update settings"
+  },
+  "title": "Settings"
+}

@@ -1,0 +1,58 @@
+{
+  "title": "About Us",
+  "lastUpdated": "Last updated:",
+  "hero": {
+    "title": "Welcome to Qualitick",
+    "subtitle": "Your Digital Healthcare Platform"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "text": "At Qualitick, we believe in revolutionizing healthcare through digital innovation. Our platform connects patients, doctors, clinics, laboratories, and pharmacies, providing seamless tools to manage medical records, streamline healthcare processes, and improve patient care through technology."
+  },
+  "features": {
+    "title": "What We Offer",
+    "items": {
+      "patientManagement": {
+        "title": "Patient Management",
+        "description": "Comprehensive digital health records, appointment scheduling, and seamless patient identification through QR codes and unique patient codes.",
+        "icon": "user-management"
+      },
+      "healthcareWorkflow": {
+        "title": "Healthcare Workflow",
+        "description": "Streamline medical appointments, lab orders, radiology requests, and prescription management between doctors, patients, and healthcare providers.",
+        "icon": "workflow"
+      },
+      "digitalIntegration": {
+        "title": "Digital Integration",
+        "description": "Paperless healthcare processes with QR code identification, digital prescriptions, and seamless integration between clinics, laboratories, radiology centers, and pharmacies.",
+        "icon": "integration"
+      }
+    }
+  },
+  "values": {
+    "title": "Our Values",
+    "items": {
+      "excellence": {
+        "title": "Excellence",
+        "description": "Striving for the highest standards in healthcare delivery"
+      },
+      "care": {
+        "title": "Care",
+        "description": "Putting patient well-being at the center of everything we do"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Using technology to enhance healthcare delivery and patient experience"
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "Making healthcare services accessible to everyone, everywhere"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "text": "Have questions about our healthcare platform or want to learn more? We'd love to hear from you! Contact our team for support, partnerships, or general inquiries about digital healthcare solutions.",
+    "email": "{{supportEmail}}"
+  }
+}

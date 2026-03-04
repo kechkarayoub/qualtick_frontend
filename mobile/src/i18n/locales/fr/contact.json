@@ -1,0 +1,79 @@
+{
+  "title": "Nous contacter",
+  "lastUpdated": "Dernière mise à jour :",
+  "hero": {
+    "title": "Entrer en contact",
+    "subtitle": "Vous avez des questions ou besoin d'aide ? Nous sommes là pour vous aider ! Envoyez-nous un message et nous vous répondrons dès que possible."
+  },
+  "contactInfo": {
+    "title": "Informations de contact",
+    "items": {
+      "email": {
+        "type": "email",
+        "title": "Support par e-mail",
+        "value": "{{supportEmail}}",
+        "description": "Obtenez de l'aide avec votre compte, la facturation ou les problèmes techniques",
+        "icon": "email"
+      },
+      "responseTime": {
+        "type": "response-time",
+        "title": "Temps de réponse",
+        "value": "Dans les 24 heures",
+        "description": "Nous répondons à toutes les demandes dans un jour ouvrable",
+        "icon": "clock"
+      },
+      "support": {
+        "type": "support",
+        "title": "Support disponible",
+        "value": "Lundi - Vendredi, 9h - 18h EST",
+        "description": "Notre équipe de support est là pour vous aider pendant les heures ouvrables",
+        "icon": "support"
+      }
+    }
+  },
+  "form": {
+    "title": "Envoyez-nous un message",
+    "fields": {
+      "name": {
+        "name": "name",
+        "label": "Nom complet",
+        "placeholder": "Entrez votre nom complet",
+        "type": "text",
+        "required": true
+      },
+      "email": {
+        "name": "email",
+        "label": "Adresse e-mail",
+        "placeholder": "Entrez votre adresse e-mail",
+        "type": "email",
+        "required": true
+      },
+      "subject": {
+        "name": "subject",
+        "label": "Sujet",
+        "placeholder": "Sélectionnez un sujet",
+        "type": "select",
+        "required": true,
+        "options": {
+          "support": "Support technique",
+          "billing": "Facturation et compte",
+          "feature": "Demande de fonctionnalité",
+          "partnership": "Partenariat",
+          "other": "Autre"
+        }
+      },
+      "message": {
+        "name": "message",
+        "label": "Message",
+        "placeholder": "Dites-nous comment nous pouvons vous aider...",
+        "type": "textarea",
+        "required": true,
+        "minLength": 10
+      }
+    },
+    "submitText": "Envoyer le message",
+    "loadingText": "Envoi en cours...",
+    "successTitle": "Message envoyé avec succès !",
+    "successMessage": "Merci de nous avoir contactés. Nous vous répondrons dans les 24 heures."
+  }
+}

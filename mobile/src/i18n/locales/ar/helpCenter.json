@@ -1,0 +1,46 @@
+{
+  "title": "مركز المساعدة",
+  "lastUpdated": "آخر تحديث:",
+  "hero": {
+    "title": "مركز المساعدة",
+    "subtitle": "البحث عن المساعدة..."
+  },
+  "categories": {
+    "all": {
+      "name": "جميع الفئات",
+      "description": "تصفح جميع مواضيع المساعدة",
+      "icon": "all"
+    },
+    "account": {
+      "name": "إعدادات الحساب",
+      "description": "إعدادات الحساب، إدارة الملف الشخصي",
+      "icon": "user"
+    },
+    "patients": {
+      "name": "إدارة المرضى",
+      "description": "إنشاء وإدارة سجلات المرضى",
+      "icon": "patients"
+    },
+    "technical": {
+      "name": "استكشاف الأخطاء وإصلاحها",
+      "description": "مشاكل التطبيق، الأخطاء، الاتصال",
+      "icon": "troubleshooting"
+    },
+    "billing": {
+      "name": "الفواتير والمدفوعات",
+      "description": "الاشتراكات، المدفوعات، الفواتير",
+      "icon": "billing"
+    },
+    "mobile": {
+      "name": "البدء",
+      "description": "أدلة البدء والإعداد",
+      "icon": "mobile"
+    }
+  },
+  "contactSupport": {
+    "title": "تحتاج مساعدة أكثر؟",
+    "description": "لا تجد ما تبحث عنه؟ فريق الدعم لدينا هنا لمساعدتك في أي أسئلة أو مشاكل.",
+    "buttonText": "اتصل بالدعم",
+    "email": "{{supportEmail}}"
+  }
+}

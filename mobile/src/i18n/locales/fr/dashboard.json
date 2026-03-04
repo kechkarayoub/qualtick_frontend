@@ -1,0 +1,79 @@
+{
+  "achievements": "Succès",
+  "actions": {
+    "configure": "Configurer",
+    "create": "Créer nouveau",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "export": "Exporter",
+    "import": "Importer",
+    "manage": "Gérer",
+    "refresh": "Rafraîchir les données",
+    "view": "Voir"
+  },
+  "description": "Voici un aperçu de votre activité de soins de santé et des actions rapides pour commencer.",
+  "findProfessionals": "Trouver des Professionnels",
+  "sessionResult": {
+    "draw": "En attente",
+    "failure": "Échec",
+    "success": "Succès"
+  },
+  "joinProgram": "Rejoindre le programme",
+  "failure": "Échec",
+  "failures": "Sessions échouées",
+  "noAchievements": "Aucun succès pour le moment",
+  "notifications": {
+    "markAllRead": "Tout marquer comme lu",
+    "markRead": "Marquer comme lu",
+    "newMessage": "Nouveau message",
+    "noNotifications": "Aucune notification",
+    "reminder": "Rappel",
+    "systemUpdate": "Mise à jour du système",
+    "title": "Notifications"
+  },
+  "overview": {
+    "notifications": "Notifications",
+    "recent": "Activité récente",
+    "stats": "Statistiques",
+    "title": "Vue d'ensemble"
+  },
+  "quickActions": {
+    "findProfessionals": "Trouver des Professionnels",
+    "title": "Actions Rapides",
+    "viewStats": "Voir les Statistiques"
+  },
+  "stats": {
+    "active": "Actif",
+    "change": "Changement",
+    "completed": "Terminé",
+    "growth": "Croissance",
+    "lastMonth": "Le mois dernier",
+    "failures": "Sessions échouées",
+    "pending": "En attente",
+    "thisMonth": "Ce mois-ci",
+    "thisWeek": "Cette semaine",
+    "today": "Aujourd'hui",
+    "total": "Total",
+    "totalSessions": "Total des sessions",
+    "successRate": "Taux de succès",
+    "successes": "Sessions réussies"
+  },
+  "tables": {
+    "empty": "Aucun élément trouvé",
+    "error": "Échec du chargement des données",
+    "loading": "Chargement des données...",
+    "noData": "Aucune donnée disponible",
+    "of": "de",
+    "page": "Page",
+    "rowsPerPage": "Lignes par page"
+  },
+  "title": "Tableau de bord",
+  "totalSessions": "Total des sessions",
+  "user": "Utilisateur",
+  "viewAll": "Voir tout",
+  "welcome": "Bon retour, {{name}} !",
+  "welcomeBack": "Bon retour",
+  "success": "Succès",
+  "successRate": "Taux de succès",
+  "successes": "Sessions réussies"
+}

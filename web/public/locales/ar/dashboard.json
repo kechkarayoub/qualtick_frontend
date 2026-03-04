@@ -1,0 +1,19 @@
+{
+  "description": "إليك نظرة عامة على نشاط الرعاية الصحية الخاص بك والإجراءات السريعة للبدء.",
+  "quickActions": {
+    "findProfessionals": "العثور على المختصين",
+    "startNewSession": "بدء جلسة جديدة",
+    "title": "الإجراءات السريعة",
+    "viewStats": "عرض الإحصائيات"
+  },
+  "recentSessions": {
+    "title": "الجلسات الأخيرة",
+    "viewAll": "عرض الكل"
+  },
+  "stats": {
+    "failures": "الجلسات الفاشلة",
+    "totalSessions": "إجمالي الجلسات",
+    "successes": "الجلسات الناجحة"
+  },
+  "welcome": "مرحباً بعودتك، {{name}}!"
+}

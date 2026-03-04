@@ -1,0 +1,19 @@
+{
+  "description": "Here's an overview of your healthcare activity and quick actions to get you started.",
+  "quickActions": {
+    "findProfessionals": "Find Professionals",
+    "startNewSession": "Start New Session",
+    "title": "Quick Actions",
+    "viewStats": "View Statistics"
+  },
+  "recentSessions": {
+    "title": "Recent Sessions",
+    "viewAll": "View All"
+  },
+  "stats": {
+    "failures": "Failed Sessions",
+    "totalSessions": "Total Sessions",
+    "successes": "Successful Sessions"
+  },
+  "welcome": "Welcome back, {{name}}!"
+}

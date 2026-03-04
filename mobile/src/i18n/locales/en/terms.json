@@ -1,0 +1,121 @@
+{
+  "title": "Terms of Service",
+  "lastUpdated": "Last updated:",
+  "introduction": {
+    "title": "Introduction",
+    "text": "Welcome to {{companyName}}! These Terms of Service (\"Terms\") govern your use of our healthcare platform and services. By accessing or using our platform, you agree to be bound by these Terms."
+  },
+  "acceptance": {
+    "title": "Acceptance of Terms",
+    "text": "By creating an account, accessing, or using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not use our services."
+  },
+  "eligibility": {
+    "title": "Eligibility",
+    "text": "To use our services, you must:",
+    "items": {
+      "age": "Be at least 13 years old (or the minimum age required in your jurisdiction)",
+      "capacity": "Have the legal capacity to enter into this agreement",
+      "compliance": "Comply with all applicable laws and regulations",
+      "accuracy": "Provide accurate and complete information during registration"
+    }
+  },
+  "accountRegistration": {
+    "title": "Account Registration and Security",
+    "text": "When you create an account with us, you must provide information that is accurate, complete, and current. You are responsible for:",
+    "items": {
+      "security": "Maintaining the security of your account and password",
+      "activities": "All activities that occur under your account",
+      "notify": "Immediately notifying us of any unauthorized use of your account",
+      "update": "Keeping your account information accurate and up-to-date"
+    }
+  },
+  "useOfServices": {
+    "title": "Use of Services",
+    "text": "Our platform provides tools and services to help you connect with healthcare professionals, manage patient records, and participate in healthcare activities. You may use our services for lawful purposes only.",
+    "permitted": {
+      "title": "Permitted Uses",
+      "items": {
+        "connect": "Connect with healthcare providers and patients",
+        "create": "Create and manage patient records",
+        "participate": "Participate in healthcare activities and consultations",
+        "share": "Share healthcare-related content and medical information"
+      }
+    },
+    "prohibited": {
+      "title": "Prohibited Uses",
+      "items": {
+        "illegal": "Use the platform for any illegal or unauthorized purpose",
+        "harass": "Harass, abuse, or harm other users",
+        "spam": "Send spam, unsolicited communications, or engage in commercial activities",
+        "impersonate": "Impersonate others or provide false information",
+        "violate": "Violate any laws, regulations, or third-party rights",
+        "interfere": "Interfere with or disrupt the platform or servers"
+      }
+    }
+  },
+  "userContent": {
+    "title": "User Content",
+    "text": "You may submit, upload, or post content on our platform (\"User Content\"). You retain ownership of your User Content, but you grant us certain rights to use it.",
+    "license": {
+      "title": "License to User Content",
+      "text": "By submitting User Content, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, adapt, publish, translate, and distribute your content in connection with our services."
+    },
+    "responsibilities": {
+      "title": "Your Responsibilities",
+      "text": "You are solely responsible for your User Content and must ensure that it:",
+      "items": {
+        "legal": "Does not violate any laws or regulations",
+        "rights": "Does not infringe on third-party rights",
+        "appropriate": "Is appropriate and not offensive or harmful",
+        "accurate": "Is accurate and not misleading"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacy and Data Protection",
+    "text": "Your privacy is important to us. Our collection and use of personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference."
+  },
+  "intellectualProperty": {
+    "title": "Intellectual Property",
+    "text": "The platform and its content, features, and functionality are owned by {{companyName}} and are protected by international copyright, trademark, and other intellectual property laws."
+  },
+  "payments": {
+    "title": "Payments and Subscriptions",
+    "text": "Some features of our platform may require payment. By making a payment, you agree to our billing terms and policies.",
+    "items": {
+      "authorization": "You authorize us to charge your payment method for applicable fees",
+      "accuracy": "You are responsible for providing accurate payment information",
+      "cancellation": "You may cancel your subscription at any time through your account settings",
+      "refunds": "Refunds are subject to our refund policy"
+    }
+  },
+  "disclaimers": {
+    "title": "Disclaimers",
+    "text": "Our services are provided \"as is\" and \"as available\" without warranties of any kind. We disclaim all warranties, express or implied, including but not limited to merchantability, fitness for a particular purpose, and non-infringement."
+  },
+  "limitation": {
+    "title": "Limitation of Liability",
+    "text": "To the fullest extent permitted by law, {{companyName}} shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues."
+  },
+  "termination": {
+    "title": "Termination",
+    "text": "We may terminate or suspend your account and access to our services at any time, with or without cause, and with or without notice. You may also terminate your account at any time."
+  },
+  "governingLaw": {
+    "title": "Governing Law",
+    "text": "These Terms are governed by and construed in accordance with the laws of the jurisdiction where our company is incorporated, without regard to conflict of law principles."
+  },
+  "changes": {
+    "title": "Changes to These Terms",
+    "text": "We reserve the right to modify these Terms at any time. We will notify you of material changes by posting the updated Terms on our platform and updating the \"Last updated\" date."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "text": "If you have any questions about these Terms of Service, please contact us:",
+    "email": "Email: {{supportEmail}}",
+    "address": "Address: {{companyAddress}}"
+  },
+  "footer": {
+    "text": "By using {{companyName}}, you acknowledge that you have read and understood these Terms of Service and agree to be bound by them."
+  }
+}

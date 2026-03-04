@@ -1,0 +1,79 @@
+{
+  "achievements": "الإنجازات",
+  "actions": {
+    "configure": "إعداد",
+    "create": "إنشاء جديد",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "export": "تصدير",
+    "import": "استيراد",
+    "manage": "إدارة",
+    "refresh": "تحديث البيانات",
+    "view": "عرض"
+  },
+  "description": "إليك نظرة عامة على نشاط الرعاية الصحية الخاص بك والإجراءات السريعة للبدء.",
+  "findProfessionals": "العثور على المختصين",
+  "sessionResult": {
+    "draw": "قيد الانتظار",
+    "failure": "فشل",
+    "success": "نجاح"
+  },
+  "joinProgram": "انضم إلى البرنامج",
+  "failure": "فشل",
+  "failures": "الجلسات الفاشلة",
+  "noAchievements": "لا توجد إنجازات حتى الآن",
+  "notifications": {
+    "markAllRead": "تحديد الكل كمقروء",
+    "markRead": "تحديد كمقروء",
+    "newMessage": "رسالة جديدة",
+    "noNotifications": "لا توجد إشعارات",
+    "reminder": "تذكير",
+    "systemUpdate": "تحديث النظام",
+    "title": "الإشعارات"
+  },
+  "overview": {
+    "notifications": "الإشعارات",
+    "recent": "النشاط الأخير",
+    "stats": "الإحصائيات",
+    "title": "نظرة عامة"
+  },
+  "quickActions": {
+    "findProfessionals": "العثور على المختصين",
+    "title": "الإجراءات السريعة",
+    "viewStats": "عرض الإحصائيات"
+  },
+  "stats": {
+    "active": "نشط",
+    "change": "تغيير",
+    "completed": "مكتمل",
+    "growth": "النمو",
+    "lastMonth": "الشهر الماضي",
+    "failures": "الجلسات الفاشلة",
+    "pending": "قيد الانتظار",
+    "thisMonth": "هذا الشهر",
+    "thisWeek": "هذا الأسبوع",
+    "today": "اليوم",
+    "total": "الإجمالي",
+    "totalSessions": "إجمالي الجلسات",
+    "successRate": "معدل النجاح",
+    "successes": "الجلسات الناجحة"
+  },
+  "tables": {
+    "empty": "لم يتم العثور على عناصر",
+    "error": "فشل في تحميل البيانات",
+    "loading": "جارٍ تحميل البيانات...",
+    "noData": "لا توجد بيانات متاحة",
+    "of": "من",
+    "page": "صفحة",
+    "rowsPerPage": "عدد الصفوف لكل صفحة"
+  },
+  "title": "لوحة التحكم",
+  "totalSessions": "إجمالي الجلسات",
+  "user": "المستخدم",
+  "viewAll": "عرض الكل",
+  "welcome": "مرحباً بعودتك، {{name}}!",
+  "welcomeBack": "مرحباً بعودتك",
+  "success": "نجاح",
+  "successRate": "معدل النجاح",
+  "successes": "الجلسات الناجحة"
+}

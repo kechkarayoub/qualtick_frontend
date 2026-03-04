@@ -1,0 +1,79 @@
+{
+  "title": "Contact Us",
+  "lastUpdated": "Last updated:",
+  "hero": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions or need support? We're here to help! Send us a message and we'll get back to you as soon as possible."
+  },
+  "contactInfo": {
+    "title": "Contact Information",
+    "items": {
+      "email": {
+        "type": "email",
+        "title": "Email Support",
+        "value": "{{supportEmail}}",
+        "description": "Get help with your account, billing, or technical issues",
+        "icon": "email"
+      },
+      "responseTime": {
+        "type": "response-time",
+        "title": "Response Time",
+        "value": "Within 24 hours",
+        "description": "We respond to all inquiries within one business day",
+        "icon": "clock"
+      },
+      "support": {
+        "type": "support",
+        "title": "Support Available",
+        "value": "Monday - Friday, 9AM - 6PM EST",
+        "description": "Our support team is here to help during business hours",
+        "icon": "support"
+      }
+    }
+  },
+  "form": {
+    "title": "Send us a Message",
+    "fields": {
+      "name": {
+        "name": "name",
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "type": "text",
+        "required": true
+      },
+      "email": {
+        "name": "email",
+        "label": "Email Address",
+        "placeholder": "Enter your email address",
+        "type": "email",
+        "required": true
+      },
+      "subject": {
+        "name": "subject",
+        "label": "Subject",
+        "placeholder": "Select a subject",
+        "type": "select",
+        "required": true,
+        "options": {
+          "support": "Technical Support",
+          "billing": "Billing & Account",
+          "feature": "Feature Request",
+          "partnership": "Partnership",
+          "other": "Other"
+        }
+      },
+      "message": {
+        "name": "message",
+        "label": "Message",
+        "placeholder": "Tell us how we can help you...",
+        "type": "textarea",
+        "required": true,
+        "minLength": 10
+      }
+    },
+    "submitText": "Send Message",
+    "loadingText": "Sending...",
+    "successTitle": "Message Sent Successfully!",
+    "successMessage": "Thank you for contacting us. We'll get back to you within 24 hours."
+  }
+}

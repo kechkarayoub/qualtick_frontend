@@ -1,0 +1,173 @@
+/**
+ * App Component - Main application component
+ * 
+ * Sets up:
+ * - React Query provider
+ * - Router
+ * - Toast notifications
+ * - Global error boundary
+ * - Theme provider
+ */
+
+import React, { useEffect } from 'react';
+import {getPageTitle} from './utils/GlobalUtils'; 
+import config from './config/config';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ToastContainer } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
+
+// Import services
+import './i18n';
+import { ThemeProvider, useTheme } from './contexts/ThemeContext';
+
+// Import components
+import ErrorBoundary from './components/ErrorBoundary';
+import LoadingSpinner from './components/LoadingSpinner';
+import AuthLayout from './components/layouts/AuthLayout';
+import MainLayout from './components/layouts/MainLayout';
+import ProtectedRoute from './components/ProtectedRoute';
+
+// Import pages
+import LoginPage from './pages/auth/LoginPage';
+import RegisterPage from './pages/auth/RegisterPage';
+import ForgotPasswordPage from './pages/auth/ForgotPasswordPage';
+import ResetPasswordPage from './pages/auth/ResetPasswordPage';
+import EmailVerificationPage from './pages/auth/EmailVerificationPage';
+import HomePage from './pages/home/HomePage';
+import SettingsPage from './pages/settings/SettingsPage';
+import ProfilePage from './pages/profile/ProfilePage';
+import PageNotFound from './pages/PageNotFound';
+
+// Import hooks
+import useAuth from './hooks/useAuth';
+import useRTL from './hooks/useRTL';
+
+// Styles
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+
+// Create a client for React Query
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 3,
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      refetchOnWindowFocus: false,
+    },
+    mutations: {
+      retry: 1,
+    },
+  },
+});
+
+const AppRoutes: React.FC = () => {
+  const { isAuthenticated, isLoading } = useAuth();
+  const { ready } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Update page title based on the current route
+    const pageTitle = config.app.name + " - " + getPageTitle(location.pathname, t);
+    document.title = pageTitle;
+  }, [location.pathname, t, i18n.language]);
+
+  // Initialize RTL support
+  useRTL();
+
+  if (!ready || isLoading) {
+    return <LoadingSpinner overlay showLogo />;
+  }
+
+  return (
+    <Routes>
+      {/* Public routes */}
+      <Route
+        path="/auth/*"
+        element={
+          isAuthenticated ? (
+            <Navigate to="/" replace />
+          ) : (
+            <AuthLayout>
+              <Routes>
+                <Route path="login" element={<LoginPage />} />
+                {process.env.REACT_APP_ENABLE_SIGNUP === 'true' && (
+                  <Route path="register" element={<RegisterPage />} />
+                )}
+                <Route path="forgot-password" element={<ForgotPasswordPage />} />
+                <Route path="reset-password" element={<ResetPasswordPage />} />
+                <Route path="*" element={<Navigate to="/auth/login" replace />} />
+              </Routes>
+            </AuthLayout>
+          )
+        }
+      />
+
+      {/* Email verification route - accessible without authentication */}
+      <Route
+        path="/accounts/verify-email"
+        element={
+          <AuthLayout>
+            <EmailVerificationPage />
+          </AuthLayout>
+        }
+      />
+
+      {/* Protected routes */}
+      <Route
+        path="/*"
+        element={
+          <ProtectedRoute>
+            <MainLayout>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="settings" element={<SettingsPage />} />
+                <Route path="profile" element={<ProfilePage />} />
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
+            </MainLayout>
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <Router>
+            <ThemedApp />
+          </Router>
+        </ThemeProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
+  );
+};
+
+const ThemedApp: React.FC = () => {
+  const { resolvedTheme } = useTheme();
+  
+  return (
+    <div className="App">
+      <AppRoutes />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+      />
+    </div>
+  );
+};
+
+export default App;

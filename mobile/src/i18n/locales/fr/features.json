@@ -1,0 +1,67 @@
+{
+  "title": "Fonctionnalités",
+  "lastUpdated": "Dernière mise à jour :",
+  "hero": {
+    "title": "Fonctionnalités puissantes pour les plateformes de santé",
+    "subtitle": "Tout ce dont vous avez besoin pour gérer, organiser et fournir des services de santé"
+  },
+  "coreFeatures": {
+    "title": "Fonctionnalités principales",
+    "items": {
+      "patientManagement": {
+        "title": "Gestion des patients",
+        "description": "Gérez les dossiers patients, suivez les antécédents médicaux, surveillez les statistiques de santé et organisez les activités de soins de santé en toute simplicité.",
+        "icon": "team-management"
+      },
+      "appointmentScheduling": {
+        "title": "Planification de rendez-vous",
+        "description": "Planifiez les rendez-vous patients, les consultations médicales et les séances de suivi. Envoyez des rappels automatisés et gérez la logistique de soins de santé de manière transparente.",
+        "icon": "calendar"
+      },
+      "realtimeCommunication": {
+        "title": "Communication en temps réel",
+        "description": "Restez connecté avec la messagerie sécurisée, les notifications patients et la communication d'équipe de soins. Ne manquez jamais les mises à jour médicales importantes.",
+        "icon": "chat"
+      },
+      "performanceAnalytics": {
+        "title": "Analyses de performance",
+        "description": "Suivez les statistiques de santé détaillées, analysez les tendances des patients et générez des rapports complets pour les prestataires de soins et les patients.",
+        "icon": "analytics"
+      },
+      "treatmentManagement": {
+        "title": "Gestion des traitements",
+        "description": "Créez et gérez les plans de traitement avec suivi des progrès, surveillance des médicaments et planification automatisée.",
+        "icon": "documents"
+      },
+      "mobileApplication": {
+        "title": "Application mobile",
+        "description": "Accédez à toutes les fonctionnalités en déplacement avec nos applications mobiles natives pour appareils iOS et Android.",
+        "icon": "mobile"
+      }
+    }
+  },
+  "advancedFeatures": {
+    "title": "Fonctionnalités avancées",
+    "items": {
+      "realtimeMonitoring": {
+        "title": "Surveillance de santé en temps réel",
+        "description": "Surveillance des signes vitaux en temps réel, mises à jour de santé en direct et notifications d'alerte médicale instantanées.",
+        "icon": "clock"
+      },
+      "thirdPartyIntegrations": {
+        "title": "Intégrations tierces",
+        "description": "Connectez-vous avec des appareils de santé populaires, des systèmes médicaux et des plateformes de soins de santé pour une intégration de données transparente.",
+        "icon": "integration"
+      },
+      "advancedSecurity": {
+        "title": "Sécurité avancée",
+        "description": "Sécurité de niveau entreprise avec chiffrement des données, authentification sécurisée et contrôles de confidentialité.",
+        "icon": "security"
+      }
+    }
+  },
+  "callToAction": {
+    "title": "Prêt à commencer ?",
+    "description": "Rejoignez des milliers d'établissements de santé qui utilisent déjà Qualitick pour gérer leurs patients et services médicaux."
+  }
+}

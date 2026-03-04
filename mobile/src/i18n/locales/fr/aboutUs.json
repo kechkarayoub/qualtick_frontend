@@ -1,0 +1,58 @@
+{
+  "title": "À propos de nous",
+  "lastUpdated": "Dernière mise à jour :",
+  "hero": {
+    "title": "Bienvenue sur Qualitick",
+    "subtitle": "Votre plateforme de santé numérique"
+  },
+  "mission": {
+    "title": "Notre mission",
+    "text": "Chez Qualitick, nous croyons en la révolution des soins de santé grâce à l'innovation numérique. Notre plateforme connecte les patients, les médecins, les cliniques, les laboratoires et les pharmacies, fournissant des outils transparents pour gérer les dossiers médicaux, rationaliser les processus de soins et améliorer les soins aux patients grâce à la technologie."
+  },
+  "features": {
+    "title": "Ce que nous offrons",
+    "items": {
+      "patientManagement": {
+        "title": "Gestion des patients",
+        "description": "Dossiers de santé numériques complets, programmation de rendez-vous et identification transparente des patients via des codes QR et des codes patients uniques.",
+        "icon": "user-management"
+      },
+      "healthcareWorkflow": {
+        "title": "Flux de travail de santé",
+        "description": "Rationalisez les rendez-vous médicaux, les commandes de laboratoire, les demandes de radiologie et la gestion des prescriptions entre médecins, patients et prestataires de soins.",
+        "icon": "workflow"
+      },
+      "digitalIntegration": {
+        "title": "Intégration numérique",
+        "description": "Processus de soins de santé sans papier avec identification par code QR, prescriptions numériques et intégration transparente entre cliniques, laboratoires, centres de radiologie et pharmacies.",
+        "icon": "integration"
+      }
+    }
+  },
+  "values": {
+    "title": "Nos valeurs",
+    "items": {
+      "excellence": {
+        "title": "Excellence",
+        "description": "Viser les plus hauts standards dans la prestation de soins de santé"
+      },
+      "care": {
+        "title": "Soins",
+        "description": "Placer le bien-être des patients au centre de tout ce que nous faisons"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Utiliser la technologie pour améliorer la prestation de soins et l'expérience des patients"
+      },
+      "accessibility": {
+        "title": "Accessibilité",
+        "description": "Rendre les services de santé accessibles à tous, partout"
+      }
+    }
+  },
+  "contact": {
+    "title": "Entrer en contact",
+    "text": "Vous avez des questions sur notre plateforme de santé ou souhaitez en savoir plus ? Nous aimerions avoir de vos nouvelles ! Contactez notre équipe pour obtenir de l'assistance, des partenariats ou des demandes générales concernant les solutions de santé numériques.",
+    "email": "{{supportEmail}}"
+  }
+}

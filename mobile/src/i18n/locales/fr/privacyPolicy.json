@@ -1,0 +1,145 @@
+{
+  "title": "Politique de Confidentialité",
+  "sections": {
+    "introduction": {
+      "title": "Introduction",
+      "content": "Nous respectons votre vie privée et nous engageons à protéger vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous utilisez nos services."
+    },
+    "dataCollection": {
+      "title": "Collecte d'Informations",
+      "subsections": {
+        "personalInfo": {
+          "title": "Informations Personnelles",
+          "content": "Nous collectons des informations que vous nous fournissez directement, notamment :",
+          "items": [
+            "Nom, adresse e-mail et coordonnées",
+            "Informations professionnelles médicales",
+            "Données d'authentification de compte",
+            "Préférences et paramètres d'utilisateur",
+            "Communications que vous nous envoyez"
+          ]
+        },
+        "medicalInfo": {
+          "title": "Informations Médicales",
+          "content": "En tant que plateforme de santé, nous collectons :",
+          "items": [
+            "Dossiers et historiques patients",
+            "Informations de traitement médical",
+            "Données de diagnostic",
+            "Observations et notes cliniques",
+            "Informations de facturation médicale"
+          ]
+        },
+        "technicalInfo": {
+          "title": "Informations Techniques",
+          "content": "Nous collectons automatiquement certaines informations techniques :",
+          "items": [
+            "Adresses IP et données de géolocalisation",
+            "Type et version du navigateur",
+            "Informations sur l'appareil",
+            "Données d'utilisation et d'activité",
+            "Journaux et métriques de performance"
+          ]
+        }
+      }
+    },
+    "dataUsage": {
+      "title": "Utilisation des Données",
+      "content": "Nous utilisons vos informations pour :",
+      "items": [
+        "Fournir et maintenir nos services de santé",
+        "Traiter les transactions et gérer les comptes",
+        "Améliorer et personnaliser l'expérience utilisateur",
+        "Communiquer avec vous concernant nos services",
+        "Assurer la sécurité et prévenir la fraude",
+        "Se conformer aux exigences légales et réglementaires",
+        "Effectuer des analyses et des recherches pour l'amélioration des services"
+      ]
+    },
+    "dataSharing": {
+      "title": "Partage d'Informations",
+      "content": "Nous ne vendons jamais vos données personnelles. Nous pouvons partager vos informations dans des circonstances limitées :",
+      "subsections": {
+        "healthcare": {
+          "title": "Prestataires de Soins de Santé",
+          "content": "Avec votre consentement explicite, nous pouvons partager vos informations médicales avec des professionnels de santé autorisés pour faciliter vos soins."
+        },
+        "service": {
+          "title": "Fournisseurs de Services",
+          "content": "Nous partageons des données avec des fournisseurs tiers de confiance qui nous aident à exploiter nos services, sous strictes obligations de confidentialité."
+        },
+        "legal": {
+          "title": "Exigences Légales",
+          "content": "Nous pouvons divulguer des informations lorsque requis par la loi, une ordonnance du tribunal, ou pour protéger nos droits et la sécurité."
+        }
+      }
+    },
+    "dataSecurity": {
+      "title": "Sécurité des Données",
+      "content": "Nous mettons en œuvre des mesures de sécurité robustes :",
+      "items": [
+        "Chiffrement des données en transit et au repos",
+        "Contrôles d'accès stricts et authentification",
+        "Surveillance régulière de la sécurité et audits",
+        "Conformité HIPAA et autres réglementations",
+        "Formation régulière du personnel sur la sécurité",
+        "Plans de réponse aux incidents et récupération"
+      ]
+    },
+    "userRights": {
+      "title": "Vos Droits",
+      "content": "Vous avez les droits suivants concernant vos données personnelles :",
+      "items": [
+        "Accès : Demander des copies de vos données personnelles",
+        "Rectification : Corriger des données inexactes ou incomplètes",
+        "Suppression : Demander la suppression de vos données personnelles",
+        "Restriction : Limiter le traitement de vos données",
+        "Portabilité : Recevoir vos données dans un format structuré",
+        "Opposition : Vous opposer au traitement de vos données",
+        "Retrait du consentement : Retirer votre consentement à tout moment"
+      ]
+    },
+    "dataRetention": {
+      "title": "Rétention des Données",
+      "content": "Nous conservons vos données personnelles uniquement aussi longtemps que nécessaire :",
+      "items": [
+        "Données de compte : Tant que votre compte reste actif",
+        "Données médicales : Selon les exigences légales et réglementaires",
+        "Données de communication : Généralement 3-7 ans pour les dossiers",
+        "Données techniques : Généralement 12-24 mois",
+        "Données de facturation : Selon les exigences fiscales et comptables"
+      ]
+    },
+    "cookies": {
+      "title": "Cookies et Technologies de Suivi",
+      "content": "Nous utilisons des cookies et technologies similaires pour :",
+      "items": [
+        "Mémoriser vos préférences et paramètres",
+        "Analyser les tendances d'utilisation du site",
+        "Administrer le site et analyser les interactions",
+        "Recueillir des informations démographiques",
+        "Améliorer nos services et expérience utilisateur"
+      ],
+      "note": "Vous pouvez contrôler les cookies via les paramètres de votre navigateur."
+    },
+    "international": {
+      "title": "Transferts Internationaux",
+      "content": "Vos données peuvent être transférées et stockées dans des pays autres que le vôtre. Nous nous assurons que de tels transferts respectent les lois applicables sur la protection des données et incluent des garanties appropriées."
+    },
+    "updates": {
+      "title": "Mises à Jour de la Politique",
+      "content": "Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Nous vous notifierons de tout changement important en publiant la nouvelle politique sur cette page et en mettant à jour la date de 'dernière mise à jour'."
+    },
+    "contact": {
+      "title": "Nous Contacter",
+      "content": "Si vous avez des questions concernant cette politique de confidentialité ou nos pratiques de données, veuillez nous contacter :",
+      "contactInfo": {
+        "email": "privacy@qualitick.com",
+        "address": "123 Rue de la Santé, Suite 456, Ville, Pays 12345",
+        "phone": "+1 (555) 123-4567"
+      }
+    }
+  },
+  "effectiveDate": "Date d'entrée en vigueur : 1er janvier 2024",
+  "lastUpdated": "Dernière mise à jour : 1er janvier 2024"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "Voici un aperçu de votre activité de soins de santé et des actions rapides pour commencer.",
+  "quickActions": {
+    "findProfessionals": "Trouver des Professionnels",
+    "startNewSession": "Nouvelle Session",
+    "title": "Actions Rapides",
+    "viewStats": "Voir les Statistiques"
+  },
+  "recentSessions": {
+    "title": "Sessions Récentes",
+    "viewAll": "Voir Tout"
+  },
+  "stats": {
+    "failures": "Sessions échouées",
+    "totalSessions": "Total des sessions",
+    "successes": "Sessions réussies"
+  },
+  "welcome": "Bon retour, {{name}} !"
+}

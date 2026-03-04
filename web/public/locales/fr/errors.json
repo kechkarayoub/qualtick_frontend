@@ -1,0 +1,18 @@
+{
+  "authentication": {
+    "sessionExpired": "Votre session a expiré. Veuillez vous reconnecter."
+  },
+  "errorDescription": "Une erreur inattendue s'est produite. Veuillez actualiser la page.",
+  "errorDetails": "Détails de l'erreur",
+  "general": {
+    "accessDenied": "Accès refusé",
+    "badRequest": "Mauvaise requête",
+    "generic": "Une erreur s'est produite",
+    "network": "Une erreur réseau est survenue. Veuillez vérifier votre connexion.",
+    "resourceNotFound": "Ressource non trouvée",
+    "serverError": "Une erreur serveur est survenue. Veuillez réessayer plus tard."
+  },
+  "goBack": "Retour",
+  "reloadPage": "Recharger la page",
+  "unexpectedError": "Quelque chose s'est mal passé"
+}

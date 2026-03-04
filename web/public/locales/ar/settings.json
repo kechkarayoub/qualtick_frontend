@@ -1,0 +1,15 @@
+{
+  "preferences": {
+    "description": "تخصيص تفضيلات التطبيق الخاصة بك.",
+    "language": "اللغة",
+    "save": "حفظ التفضيلات",
+    "selectLanguage": "اختر اللغة",
+    "selectTimezone": "اختر المنطقة الزمنية",
+    "theme": "السمة",
+    "timezone": "المنطقة الزمنية",
+    "title": "التفضيلات",
+    "updateSuccess": "تم تحديث الإعدادات بنجاح",
+    "updateError": "فشل في تحديث الإعدادات"
+  },
+  "title": "الإعدادات"
+}

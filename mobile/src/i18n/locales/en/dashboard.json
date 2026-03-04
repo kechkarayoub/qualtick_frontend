@@ -1,0 +1,79 @@
+{
+  "achievements": "Achievements",
+  "actions": {
+    "configure": "Configure",
+    "create": "Create New",
+    "delete": "Delete",
+    "edit": "Edit",
+    "export": "Export",
+    "import": "Import",
+    "manage": "Manage",
+    "refresh": "Refresh Data",
+    "view": "View"
+  },
+  "description": "Here's an overview of your healthcare activity and quick actions to get you started.",
+  "findProfessionals": "Find Professionals",
+  "sessionResult": {
+    "draw": "Pending",
+    "failure": "Failed",
+    "success": "Success"
+  },
+  "joinProgram": "Join Program",
+  "failure": "Failed",
+  "failures": "Failed Sessions",
+  "noAchievements": "No achievements yet",
+  "notifications": {
+    "markAllRead": "Mark all as read",
+    "markRead": "Mark as read",
+    "newMessage": "New message",
+    "noNotifications": "No notifications",
+    "reminder": "Reminder",
+    "systemUpdate": "System update",
+    "title": "Notifications"
+  },
+  "overview": {
+    "notifications": "Notifications",
+    "recent": "Recent Activity",
+    "stats": "Statistics",
+    "title": "Overview"
+  },
+  "quickActions": {
+    "findProfessionals": "Find Professionals",
+    "title": "Quick Actions",
+    "viewStats": "View Statistics"
+  },
+  "stats": {
+    "active": "Active",
+    "change": "Change",
+    "completed": "Completed",
+    "growth": "Growth",
+    "lastMonth": "Last month",
+    "failures": "Failed Sessions",
+    "pending": "Pending",
+    "thisMonth": "This month",
+    "thisWeek": "This week",
+    "today": "Today",
+    "total": "Total",
+    "totalSessions": "Total Sessions",
+    "successRate": "Success Rate",
+    "successes": "Successful Sessions"
+  },
+  "tables": {
+    "empty": "No items found",
+    "error": "Failed to load data",
+    "loading": "Loading data...",
+    "noData": "No data available",
+    "of": "of",
+    "page": "Page",
+    "rowsPerPage": "Rows per page"
+  },
+  "title": "Dashboard",
+  "totalSessions": "Total Sessions",
+  "user": "User",
+  "viewAll": "View All",
+  "welcome": "Welcome back, {{name}}!",
+  "welcomeBack": "Welcome back",
+  "success": "Success",
+  "successRate": "Success Rate",
+  "successes": "Successful Sessions"
+}

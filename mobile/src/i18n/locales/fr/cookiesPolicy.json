@@ -1,0 +1,95 @@
+{
+  "title": "Politique des cookies",
+  "lastUpdated": "Dernière mise à jour :",
+  "introduction": {
+    "title": "Que sont les cookies ?",
+    "text": "Cette Politique des cookies explique comment {{companyName}} utilise les cookies et les technologies de suivi similaires lorsque vous visitez notre plateforme de santé. Nous utilisons des cookies pour améliorer votre expérience, analyser les habitudes d'utilisation et fournir du contenu et des services de santé personnalisés."
+  },
+  "whatAreCookies": {
+    "title": "Comprendre les cookies",
+    "text": "Les cookies sont de petits fichiers texte qui sont stockés sur votre appareil lorsque vous visitez un site web. Ils aident les sites web à se souvenir d'informations sur votre visite, telles que vos paramètres préférés et votre statut de connexion, ce qui peut rendre votre prochaine visite plus facile et le site plus utile pour vous."
+  },
+  "typesOfCookies": {
+    "title": "Types de cookies que nous utilisons",
+    "essential": {
+      "title": "Cookies essentiels",
+      "text": "Ces cookies sont nécessaires au bon fonctionnement du site web. Ils permettent des fonctionnalités de base telles que la sécurité, la gestion du réseau et l'accessibilité.",
+      "items": [
+        "Authentification utilisateur et gestion de session",
+        "Sécurité et prévention de la fraude",
+        "Fonctionnalités de base du site web et navigation",
+        "Vos préférences de consentement pour les cookies"
+      ]
+    },
+    "performance": {
+      "title": "Cookies de performance",
+      "text": "Ces cookies collectent des informations sur la façon dont vous utilisez notre site web, nous aidant à comprendre et à améliorer les performances.",
+      "items": [
+        "Analyses de site web et statistiques d'utilisation",
+        "Suivi des erreurs et surveillance des performances",
+        "Optimisation du site web et tests A/B",
+        "Métriques de vitesse de chargement et de performance"
+      ]
+    },
+    "functional": {
+      "title": "Cookies fonctionnels",
+      "text": "Ces cookies permettent des fonctionnalités améliorées et une personnalisation, comme se souvenir de vos préférences et paramètres.",
+      "items": [
+        "Préférences de langue et de région",
+        "Paramètres et personnalisations de l'interface utilisateur",
+        "Contenu personnalisé et recommandations",
+        "Données de formulaire et entrées utilisateur"
+      ]
+    },
+    "targeting": {
+      "title": "Cookies de ciblage",
+      "text": "Ces cookies sont utilisés pour diffuser des publicités et du contenu marketing pertinents basés sur vos intérêts et votre comportement.",
+      "items": [
+        "Campagnes publicitaires et marketing ciblées",
+        "Intégration et partage sur les réseaux sociaux",
+        "Suivi inter-sites et analyse comportementale",
+        "Campagnes de reciblage et de remarketing"
+      ]
+    }
+  },
+  "managing": {
+    "title": "Gestion de vos préférences de cookies",
+    "text": "Vous avez plusieurs options pour gérer les cookies sur notre site web :",
+    "consent": {
+      "title": "Bannière de consentement aux cookies",
+      "text": "Lors de votre première visite sur notre site web, vous verrez une bannière de consentement aux cookies où vous pouvez choisir quels types de cookies accepter ou rejeter."
+    },
+    "browser": {
+      "title": "Paramètres du navigateur",
+      "text": "Vous pouvez contrôler et supprimer les cookies via les paramètres de votre navigateur. La plupart des navigateurs vous permettent de :",
+      "items": [
+        "Voir et supprimer les cookies existants",
+        "Bloquer les cookies de sites web spécifiques",
+        "Désactiver tous les cookies (peut affecter la fonctionnalité du site web)",
+        "Recevoir des notifications lorsque des cookies sont définis"
+      ]
+    }
+  },
+  "impact": {
+    "title": "Impact de la désactivation des cookies",
+    "text": "Veuillez noter que la désactivation de certains cookies peut affecter votre expérience sur notre site web :",
+    "items": [
+      "Certaines fonctionnalités peuvent ne pas fonctionner correctement ou être indisponibles",
+      "Le contenu personnalisé et les recommandations peuvent ne pas être affichés",
+      "Vos préférences et paramètres peuvent ne pas être mémorisés",
+      "Nous pourrions ne pas être en mesure d'améliorer nos services basés sur les habitudes d'utilisation"
+    ]
+  },
+  "updates": {
+    "title": "Mises à jour de cette politique",
+    "text": "Nous pouvons mettre à jour cette Politique des cookies de temps à autre pour refléter les changements dans la technologie, la législation ou nos pratiques commerciales. Nous vous informerons de tout changement significatif en mettant à jour la date \"Dernière mise à jour\" en haut de cette politique."
+  },
+  "contact": {
+    "title": "Nous contacter",
+    "text": "Si vous avez des questions sur notre utilisation des cookies ou cette Politique des cookies, veuillez nous contacter :",
+    "email": "E-mail : {{supportEmail}}"
+  },
+  "footer": {
+    "text": "En continuant à utiliser {{companyName}}, vous reconnaissez avoir lu et compris cette Politique des cookies et consentez à notre utilisation des cookies comme décrit ici."
+  }
+}
