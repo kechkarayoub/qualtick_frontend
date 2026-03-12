@@ -64,7 +64,7 @@ class AuthenticatedApiService {
     return AuthenticatedApiService.instance;
   }
 
-  private async setupInterceptors(): Promise<void> {
+  private setupInterceptors(): void {
     // Request interceptor
     this.axiosInstance.interceptors.request.use(
       async (config) => {

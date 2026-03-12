@@ -1,0 +1,36 @@
+Prerequisites
+
+- Node.js (16+ recommended) and Yarn
+- Java JDK 11+ and Android SDK (via Android Studio)
+- Android emulator or a physical Android device with USB debugging enabled
+- `adb` on PATH
+
+1) Open a terminal and go to the mobile app folder
+
+```powershell
+cd "qualitick_frontend\mobile"
+```
+
+2) Install dependencies
+
+```powershell
+yarn install
+```
+
+3) Start Metro bundler
+
+```powershell
+yarn start
+```
+
+4) In a new terminal, build and run on Android
+
+```powershell
+yarn android
+```
+
+5) Troubleshooting
+
+- If build fails, open `android` in Android Studio and sync Gradle, then rebuild.
+- Ensure `JAVA_HOME` and Android SDK paths are set.
+- For device logs: `adb logcat`.

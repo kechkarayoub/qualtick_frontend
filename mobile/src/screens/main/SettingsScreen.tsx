@@ -14,6 +14,8 @@ import {
   Switch,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useNavigation } from '@react-navigation/native';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import useAuth from '../../hooks/useAuth';
@@ -21,12 +23,14 @@ import CustomButton from '../../components/form/CustomButton';
 import ThemeSelector from '../../components/ThemeSelector';
 import LanguagePicker from '../../components/LanguagePicker';
 import AppHeader from '../../components/AppHeader';
+import { MainTabParamList } from '../../navigation/AppNavigation';
 
 const SettingsScreen: React.FC = () => {
   const { t } = useTranslation();
   const { colors } = useTheme();
   const { language } = useLanguage();
   const { logout } = useAuth();
+  const navigation = useNavigation<BottomTabNavigationProp<MainTabParamList>>();
   const [showLanguagePicker, setShowLanguagePicker] = useState(false);
 
   const handleLogout = async () => {
@@ -126,7 +130,7 @@ const SettingsScreen: React.FC = () => {
             {t('settings:sections.privacySecurity')}
           </Text>
           
-          <TouchableOpacity style={styles.settingRow}>
+          <TouchableOpacity style={styles.settingRow} onPress={() => navigation.navigate('Profile')}>
             <Text style={[styles.settingLabel, { color: colors.text }]}>
               {t('settings:security.changePassword')}
             </Text>

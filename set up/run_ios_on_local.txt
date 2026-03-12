@@ -1,0 +1,43 @@
+Prerequisites
+
+- macOS with Xcode installed
+- Node.js (16+), Yarn
+- CocoaPods (`sudo gem install cocoapods`)
+
+1) Open a terminal and go to the mobile app folder
+
+```bash
+cd "qualitick_frontend/mobile"
+```
+
+2) Install JS dependencies
+
+```bash
+yarn install
+```
+
+3) Install iOS pods
+
+```bash
+cd ios
+pod install
+cd ..
+```
+
+4) Start Metro bundler
+
+```bash
+yarn start
+```
+
+5) In a new terminal, run the app on simulator
+
+```bash
+yarn ios
+# Or open ios/YourApp.xcworkspace in Xcode and run from there
+```
+
+6) Troubleshooting
+
+- If you see provisioning/profile errors, run via Xcode and set a valid signing team.
+- Clean build: `cd ios && xcodebuild clean` or use Xcode Clean.

@@ -63,18 +63,14 @@ const queryClient = new QueryClient({
 
 const AppRoutes: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth();
-  const { ready } = useTranslation();
-  const { t, i18n } = useTranslation();
+  const { t, i18n, ready } = useTranslation();
   const location = useLocation();
+  const { isRTL } = useRTL();
 
   useEffect(() => {
-    // Update page title based on the current route
-    const pageTitle = config.app.name + " - " + getPageTitle(location.pathname, t);
+    const pageTitle = config.app.name + ' - ' + getPageTitle(location.pathname, t);
     document.title = pageTitle;
   }, [location.pathname, t, i18n.language]);
-
-  // Initialize RTL support
-  useRTL();
 
   if (!ready || isLoading) {
     return <LoadingSpinner overlay showLogo />;
@@ -150,17 +146,19 @@ const App: React.FC = () => {
 
 const ThemedApp: React.FC = () => {
   const { resolvedTheme } = useTheme();
+  const { i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
   
   return (
     <div className="App">
       <AppRoutes />
       <ToastContainer
-        position="top-right"
+        position={isRTL ? 'top-left' : 'top-right'}
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
-        rtl={false}
+        rtl={isRTL}
         pauseOnFocusLoss
         draggable
         pauseOnHover

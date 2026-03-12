@@ -138,8 +138,6 @@ const MainNavigator = () => {
 const RootNavigator = () => {
   const { isAuthenticated, isLoading } = useAuth();
 
-  console.log('RootNavigator - isAuthenticated:', isAuthenticated, 'isLoading:', isLoading);
-
   if (isLoading) {
     return <LoadingSpinner visible overlay />;
   }
@@ -164,8 +162,6 @@ const AppNavigation = () => {
   const { isAuthenticated, logout } = useAuth();
   const navigationRef = useRef<NavigationContainerRef<any>>(null);
   
-  console.log('AppNavigation - isAuthenticated:', isAuthenticated);
-  
   const [navigationReady, setNavigationReady] = React.useState(false);
 
   useEffect(() => {
@@ -176,17 +172,13 @@ const AppNavigation = () => {
 
   useEffect(() => {
     if (navigationReady) {
-      console.log('Navigation ready, initializing DeepLinkingService');
-      // Initialize deep linking service only when navigation is ready
       DeepLinkingService.onNavigationReady();
       const cleanup = DeepLinkingService.init();
-      
       return cleanup;
     }
   }, [navigationReady, isAuthenticated]);
 
   const handleNavigationReady = () => {
-    console.log('Navigation container ready');
     setNavigationReady(true);
   };
   

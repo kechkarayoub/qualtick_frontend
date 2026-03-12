@@ -18,13 +18,19 @@ import WebSocketService from '../services/WebSocketService';
 export interface User {
   id: string;
   email: string;
+  username?: string;
   first_name?: string;
   last_name?: string;
-  // firstName?: string; // Keep for backward compatibility
-  // lastName?: string; // Keep for backward compatibility
   user_phone_number?: string;
   user_image_url?: string;
-  profileImage?: string; // Keep for backward compatibility
+  user_theme?: string;
+  user_address?: string;
+  user_birthday?: string | null;
+  user_cin?: string;
+  user_country?: string;
+  user_gender?: string;
+  user_is_email_verified?: boolean;
+  /** @deprecated use user_is_email_verified */
   isEmailVerified?: boolean;
   createdAt?: string;
   updatedAt?: string;
@@ -287,13 +293,10 @@ const useAuth = () => {
   // Logout function
   const logout = useCallback(async (logoutAllDevices: boolean = false) => {
     try {
-      console.log('Logging out user...');
-      
-      // Call the API service logout method which handles token blacklisting
-      var data = {
+      const data = {
         logout_all_devices: logoutAllDevices,
         selected_language: i18n.language,
-      }
+      };
       await apiService.logout(data);
 
     } catch (error) {
@@ -350,20 +353,8 @@ const useAuth = () => {
         await secureStorage.setItem('user', JSON.stringify(data.user));
       }
       
-      // Update user data in cache immediately (this is synchronous)
       queryClient.setQueryData(['user', 'profile'], data.user);
-      
-      // Force an immediate cache update by removing stale state
-      queryClient.removeQueries({ queryKey: ['user', 'profile'] });
-      queryClient.setQueryData(['user', 'profile'], data.user);
-      
-      // Force all components to re-fetch user data from storage 
       queryClient.invalidateQueries({ queryKey: ['user', 'profile'] });
-      
-      // Trigger a manual refetch to ensure immediate UI update
-      setTimeout(() => {
-        queryClient.refetchQueries({ queryKey: ['user', 'profile'] });
-      }, 0);
     },
     onError: (error: any) => {
       const message = error?.response?.data?.message || t('messages.profileUpdateFailed');
@@ -405,15 +396,18 @@ const useAuth = () => {
 
   // Request password reset mutation
   const requestPasswordResetMutation = useMutation({
-    mutationFn: async (email: string) => {
-      // TODO: Implement forgot password endpoint in backend
-      throw new Error('Forgot password functionality not yet implemented');
+    mutationFn: async (emailOrUsername: string) => {
+      const response = await apiService.post('/accounts/forgot-password/', {
+        email_or_username: emailOrUsername,
+        selected_language: i18n.language,
+      });
+      return response.data;
     },
     onSuccess: () => {
       toast.success(t('messages.passwordResetSent'));
     },
     onError: (error: any) => {
-      const message = error?.message || t('messages.passwordResetFailed');
+      const message = error?.response?.data?.message || t('messages.passwordResetFailed');
       toast.error(message);
     },
   });

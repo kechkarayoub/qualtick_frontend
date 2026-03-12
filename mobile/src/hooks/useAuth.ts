@@ -314,8 +314,6 @@ const useProvideAuth = () => {
   // Logout function
   const logout = useCallback(async (logoutAllDevices: boolean = false) => {
     try {
-      console.log('Logging out user...');
-      
       const data = {
         logout_all_devices: logoutAllDevices,
         selected_language: i18n.language,

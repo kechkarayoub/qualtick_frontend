@@ -1,0 +1,21 @@
+Prerequisites
+- Node.js (16+), Yarn
+1) Open a terminal and go to the web app folder
+```powershell
+cd "qualitick_frontend\web"
+```
+2) Install dependencies
+```powershell
+yarn install
+```
+3) Start development server
+```powershell
+yarn start
+```
+4) Build for production
+```powershell
+yarn build
+```
+5) Troubleshooting
+-- If port is in use, specify `PORT=3000 yarn start` or change port in environment.
+- For TypeScript errors, ensure `tsconfig.json` is configured (I updated `target` to `es2017`).

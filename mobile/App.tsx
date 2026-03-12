@@ -90,7 +90,6 @@ const AppContent: React.FC = () => {
       }, 500);
     }
   }, [isAppLoading, authLoading]);
-console.log({isAppLoading, authLoading, showSplash});
   return (
     <GestureHandlerRootView style={styles.container}>
       <StatusBar
