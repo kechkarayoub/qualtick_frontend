@@ -1,10 +1,12 @@
 /**
  * Environment Variables Validation Test for Mobile App
  * This test ensures all required environment variables are present
- * and properly configured for react-native-config
+ * and properly configured for the mobile env source
  */
 
-import Config from 'react-native-config';
+import Config from './src/env.generated';
+
+const configMap = Config as Record<string, string | undefined>;
 
 describe('Mobile Environment Variables Validation', () => {
   const requiredEnvVars = [
@@ -81,9 +83,9 @@ describe('Mobile Environment Variables Validation', () => {
   describe('Required Environment Variables', () => {
     requiredEnvVars.forEach((envVar) => {
       test(`${envVar} should be defined in Config`, () => {
-        expect(Config[envVar]).toBeDefined();
-        expect(Config[envVar]).not.toBe('');
-        expect(Config[envVar]).not.toBe('undefined');
+        expect(configMap[envVar]).toBeDefined();
+        expect(configMap[envVar]).not.toBe('');
+        expect(configMap[envVar]).not.toBe('undefined');
       });
     });
   });
@@ -92,7 +94,7 @@ describe('Mobile Environment Variables Validation', () => {
     optionalEnvVars.forEach((envVar) => {
       test(`${envVar} should be accessible from Config (can be empty)`, () => {
         // Optional variables should be accessible but can be undefined
-        expect(Config[envVar] === undefined || typeof Config[envVar] === 'string').toBe(true);
+        expect(configMap[envVar] === undefined || typeof configMap[envVar] === 'string').toBe(true);
       });
     });
   });
@@ -147,7 +149,7 @@ describe('Mobile Environment Variables Validation', () => {
       ];
 
       booleanVars.forEach((varName) => {
-        const value = Config[varName];
+        const value = configMap[varName];
         expect(value).toBeDefined();
         expect(['true', 'false', '"true"', '"false"']).toContain(value);
       });
@@ -213,7 +215,7 @@ describe('Mobile Environment Variables Validation', () => {
 
       // All Firebase vars should be defined
       firebaseVars.forEach((varName) => {
-        expect(Config[varName]).toBeDefined();
+        expect(configMap[varName]).toBeDefined();
       });
     });
   });
@@ -251,7 +253,7 @@ describe('Mobile Environment Variables Validation', () => {
       ];
       
       featureFlags.forEach((flag) => {
-        const value = Config[flag];
+        const value = configMap[flag];
         expect(value).toBeDefined();
         expect(typeof value).toBe('string');
       });

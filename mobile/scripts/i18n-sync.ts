@@ -1,8 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
 
-// Recursively merge missing keys from source into target without overwriting existing values
-function mergeMissing(source, target) {
+function mergeMissing(source: Record<string, any>, target: Record<string, any>): boolean {
   let changed = false;
   for (const key of Object.keys(source)) {
     const srcVal = source[key];
@@ -16,28 +15,28 @@ function mergeMissing(source, target) {
     ) {
       if (mergeMissing(srcVal, tgtVal)) changed = true;
     } else if (typeof tgtVal === 'string' && tgtVal.trim() === '') {
-      target[key] = srcVal; // fill empty strings
+      target[key] = srcVal;
       changed = true;
     }
   }
   return changed;
 }
 
-function loadJson(file) {
+function loadJson(file: string): Record<string, any> {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
-function saveJson(file, data) {
+function saveJson(file: string, data: Record<string, any>): void {
   fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n', 'utf8');
 }
 
-function syncLocales() {
-  const localesDir = path.resolve(__dirname, '../src/i18n/locales');
+function syncLocales(localesRootDir: string = path.resolve(__dirname, '../src/i18n/locales')): number {
+  const localesDir = localesRootDir;
   const enDir = path.join(localesDir, 'en');
   const frDir = path.join(localesDir, 'fr');
   const arDir = path.join(localesDir, 'ar');
 
-  const files = fs.readdirSync(enDir).filter(f => f.endsWith('.json'));
+  const files = fs.readdirSync(enDir).filter((f) => f.endsWith('.json'));
 
   let totalChanges = 0;
   for (const file of files) {
@@ -72,6 +71,12 @@ function syncLocales() {
   } else {
     console.log(`[i18n-sync] Completed with ${totalChanges} file(s) updated.`);
   }
+
+  return totalChanges;
 }
 
-syncLocales();
+export { mergeMissing, loadJson, saveJson, syncLocales };
+
+if (typeof require !== 'undefined' && require.main === module) {
+  syncLocales();
+}

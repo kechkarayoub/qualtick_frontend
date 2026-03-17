@@ -195,7 +195,7 @@ const ProfilePage: React.FC = () => {
       const formData = new FormData();
       
       // Add all the profile data to FormData
-      formData.append('action',"updatePassword");
+      formData.append('action',"update_password");
       formData.append('current_language', i18n.language);
       formData.append('current_password', data.current_password);
       formData.append('new_password', data.new_password);

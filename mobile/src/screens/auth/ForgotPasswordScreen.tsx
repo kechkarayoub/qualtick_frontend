@@ -27,7 +27,7 @@ import CustomButton from '../../components/form/CustomButton';
 import AppHeader from '../../components/AppHeader';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import { useTheme } from '../../contexts/ThemeContext';
-import AuthenticatedApiService from '../../services/AuthenticatedApiService';
+import UnauthenticatedApiService from '../../services/UnauthenticatedApiService';
 import Toast from 'react-native-toast-message';
 
 type ForgotPasswordScreenNavigationProp = StackNavigationProp<AuthStackParamList, 'ForgotPassword'>;
@@ -51,7 +51,7 @@ const ForgotPasswordScreen: React.FC = () => {
   const [responseMessage, setResponseMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
-  const apiService = AuthenticatedApiService.getInstance();
+  const apiService = UnauthenticatedApiService.getInstance();
 
   const {
     control,

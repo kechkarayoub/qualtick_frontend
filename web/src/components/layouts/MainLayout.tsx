@@ -7,9 +7,9 @@
 
 import React, { useState } from 'react';
 
-import MainHeader from '../layout/MainHeader';
-import MainFooter from '../layout/MainFooter';
-import Sidebar from '../layout/Sidebar';
+import MainHeader from './MainHeader';
+import MainFooter from './MainFooter';
+import Sidebar from './Sidebar';
 import './MainLayout.css';
 
 interface MainLayoutProps {

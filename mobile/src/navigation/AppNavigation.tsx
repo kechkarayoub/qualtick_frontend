@@ -15,7 +15,9 @@ import RegisterScreen from '../screens/auth/RegisterScreen';
 import ForgotPasswordScreen from '../screens/auth/ForgotPasswordScreen';
 import ResetPasswordScreen from '../screens/auth/ResetPasswordScreen';
 import EmailVerificationScreen from '../screens/auth/EmailVerificationScreen';
+import NotFoundScreen from '../screens/NotFoundScreen';
 import HomeScreen from '../screens/main/HomeScreen';
+import DashboardScreen from '../screens/main/DashboardScreen';
 import ProfileScreen from '../screens/main/ProfileScreen';
 import SettingsScreen from '../screens/main/SettingsScreen';
 
@@ -46,6 +48,7 @@ export type AuthStackParamList = {
 
 export type MainTabParamList = {
   Home: undefined;
+  Dashboard: undefined;
   Profile: undefined;
   Settings: undefined;
 };
@@ -53,6 +56,7 @@ export type MainTabParamList = {
 export type RootStackParamList = {
   AuthStack: undefined;
   MainStack: undefined;
+  NotFound: undefined;
 };
 
 const AuthStack = createStackNavigator<AuthStackParamList>();
@@ -115,6 +119,14 @@ const MainNavigator = () => {
           tabBarLabel: 'Home',
         }}
       />
+      <MainTab.Screen
+        name="Dashboard"
+        component={DashboardScreen}
+        options={{
+          title: 'Dashboard',
+          tabBarLabel: 'Dashboard',
+        }}
+      />
       <MainTab.Screen 
         name="Profile" 
         component={ProfileScreen}
@@ -149,9 +161,15 @@ const RootNavigator = () => {
       key={isAuthenticated ? 'authenticated' : 'unauthenticated'}
     >
       {isAuthenticated ? (
-        <RootStack.Screen name="MainStack" component={MainNavigator} />
+        <>
+          <RootStack.Screen name="MainStack" component={MainNavigator} />
+          <RootStack.Screen name="NotFound" component={NotFoundScreen} />
+        </>
       ) : (
-        <RootStack.Screen name="AuthStack" component={AuthNavigator} />
+        <>
+          <RootStack.Screen name="AuthStack" component={AuthNavigator} />
+          <RootStack.Screen name="NotFound" component={NotFoundScreen} />
+        </>
       )}
     </RootStack.Navigator>
   );

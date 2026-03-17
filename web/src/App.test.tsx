@@ -29,11 +29,16 @@ jest.mock('./i18n', () => ({
   default: {},
 }));
 
+const mockTranslationState = {
+  language: 'en',
+  ready: true,
+};
+
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
     t: (key: string, options?: any) => options?.defaultValue || key,
-    i18n: { language: 'en' },
-    ready: true,
+    i18n: { language: mockTranslationState.language },
+    ready: mockTranslationState.ready,
   }),
 }));
 
@@ -199,11 +204,14 @@ jest.mock('@tanstack/react-query', () => {
 const originalEnv = process.env;
 
 const useAuthMock = require('./hooks/useAuth').default;
+const useRTLMock = require('./hooks/useRTL').default;
 
 describe('App Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     process.env = { ...originalEnv };
+    mockTranslationState.language = 'en';
+    mockTranslationState.ready = true;
     
     // Default mock implementation
     useAuthMock.mockReturnValue({
@@ -213,6 +221,10 @@ describe('App Component', () => {
       login: jest.fn(),
       logout: jest.fn(),
       register: jest.fn(),
+    });
+
+    useRTLMock.mockReturnValue({
+      isRTL: false,
     });
 
     // Reset location mock
@@ -254,6 +266,20 @@ describe('App Component', () => {
 
     expect(screen.getByTestId('loading-spinner')).toBeInTheDocument();
     expect(screen.getByText('Loading...')).toBeInTheDocument();
+  });
+
+  it('should show loading spinner when translations are not ready', () => {
+    mockTranslationState.ready = false;
+
+    useAuthMock.mockReturnValue({
+      isAuthenticated: false,
+      isLoading: false,
+      user: null,
+    });
+
+    render(<App />);
+
+    expect(screen.getByTestId('loading-spinner')).toBeInTheDocument();
   });
 
   it('should render main app structure when not loading', () => {
@@ -380,11 +406,18 @@ describe('App Component', () => {
   });
 
   it('should handle RTL initialization', () => {
-    const useRTLMock = require('./hooks/useRTL').default;
-    
     render(<App />);
     
     // Verify useRTL hook is called during initialization
     expect(useRTLMock).toHaveBeenCalled();
+  });
+
+  it('should render toast container on top-left for Arabic language', () => {
+    mockTranslationState.language = 'ar';
+
+    render(<App />);
+
+    const toastContainer = screen.getByTestId('toast-container');
+    expect(toastContainer).toHaveAttribute('data-position', 'top-left');
   });
 });

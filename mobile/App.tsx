@@ -27,6 +27,7 @@ import AppNavigation from './src/navigation/AppNavigation';
 
 // Hooks
 import useAuth, { AuthProvider } from './src/hooks/useAuth';
+import useAuthenticatedWebSocket from './src/hooks/useAuthenticatedWebSocket';
 
 // Create a client for React Query
 const queryClient = new QueryClient({
@@ -45,6 +46,7 @@ const queryClient = new QueryClient({
 const AppContent: React.FC = () => {
   const { resolvedTheme } = useTheme();
   const { isLoading: authLoading, isInitialized } = useAuth();
+  useAuthenticatedWebSocket();
   const [isAppLoading, setIsAppLoading] = useState(true);
   const [showSplash, setShowSplash] = useState(true);
 

@@ -125,5 +125,48 @@ describe('index.tsx', () => {
   });
 });
 
+describe('index.tsx bootstrap behavior', () => {
+  afterEach(() => {
+    jest.resetModules();
+    jest.clearAllMocks();
+  });
+
+  it('should create root and render App inside StrictMode', () => {
+    const renderMock = jest.fn();
+    const createRootMock = jest.fn(() => ({ render: renderMock }));
+
+    jest.doMock('react-dom/client', () => ({
+      __esModule: true,
+      default: { createRoot: createRootMock },
+      createRoot: createRootMock,
+    }));
+
+    jest.doMock('./App', () => ({
+      __esModule: true,
+      default: () => <div data-testid="app-root">App</div>,
+    }));
+
+    const reportWebVitalsMock = jest.fn();
+    jest.doMock('./reportWebVitals', () => ({
+      __esModule: true,
+      default: reportWebVitalsMock,
+    }));
+
+    const rootElement = document.createElement('div');
+    rootElement.id = 'root';
+    document.body.appendChild(rootElement);
+
+    jest.isolateModules(() => {
+      require('./index');
+    });
+
+    expect(createRootMock).toHaveBeenCalledWith(rootElement);
+    expect(renderMock).toHaveBeenCalledTimes(1);
+    expect(reportWebVitalsMock).toHaveBeenCalledTimes(1);
+
+    document.body.removeChild(rootElement);
+  });
+});
+
 // Export statement to make this file a module under TypeScript's isolatedModules
 export {};

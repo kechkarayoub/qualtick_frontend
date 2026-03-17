@@ -2,10 +2,11 @@
   "name": "qualitick",
   "version": "0.0.1",
   "private": true,
+  "main": "index.tsx",
   "scripts": {
-    "preenv": "node ./scripts/generate-env.js",
-    "env": "node ./scripts/generate-env.js",
-    "i18n:sync": "node ./scripts/i18n-sync.js",
+    "preenv": "tsx ./scripts/generate-env.ts",
+    "env": "tsx ./scripts/generate-env.ts",
+    "i18n:sync": "tsx ./scripts/i18n-sync.ts",
     "android": "yarn env && react-native run-android",
     "ios": "yarn env && react-native run-ios",
     "lint": "eslint .",
@@ -73,6 +74,7 @@
     "prettier": "2.8.8",
     "react-test-renderer": "19.1.0",
     "sharp": "^0.34.3",
+    "tsx": "^4.19.3",
     "typescript": "^5.6.0"
   },
   "engines": {

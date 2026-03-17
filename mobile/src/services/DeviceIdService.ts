@@ -84,7 +84,7 @@ class DeviceIdService {
    */
   private generateFallbackId(): string {
     const timestamp = Date.now().toString();
-    const random = Math.random().toString(36).substr(2, 9);
+    const random = Math.random().toString(36).slice(2, 11);
     return `fallback_${timestamp}_${random}`;
   }
 

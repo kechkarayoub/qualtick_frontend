@@ -452,4 +452,64 @@ describe('UnauthenticatedApiService', () => {
       expect(mockedAxios.create).toHaveBeenCalledTimes(1);
     });
   });
+
+  describe('Phone Number Verification API', () => {
+    it('should verify phone number successfully', async () => {
+      const mockResponse = { message: 'Phone number verified successfully.' };
+      mockAxiosInstance.get.mockResolvedValue({ data: mockResponse });
+
+      const result = await service.verifyPhoneNumber({
+        uid: 'dGVzdA',
+        verification_code: '123456',
+      });
+
+      expect(mockAxiosInstance.get).toHaveBeenCalledWith('/accounts/verify-phone-number/', {
+        params: { uid: 'dGVzdA', verification_code: '123456' },
+      });
+      expect(result).toEqual(mockResponse);
+    });
+
+    it('should handle resend verification code flag', async () => {
+      const mockResponse = { message: 'A new verification code will be sent to your phone number.' };
+      mockAxiosInstance.get.mockResolvedValue({ data: mockResponse });
+
+      const result = await service.verifyPhoneNumber({
+        uid: 'dGVzdA',
+        verification_code: '000000',
+        resend_verification_phone_number_code: true,
+      });
+
+      expect(mockAxiosInstance.get).toHaveBeenCalledWith('/accounts/verify-phone-number/', {
+        params: { uid: 'dGVzdA', verification_code: '000000', resend_verification_phone_number_code: true },
+      });
+      expect(result).toEqual(mockResponse);
+    });
+
+    it('should handle invalid code error from backend', async () => {
+      const errorResponse = {
+        response: {
+          data: { message: 'Invalid code.' },
+        },
+      };
+      mockAxiosInstance.get.mockRejectedValue(errorResponse);
+
+      const result = await service.verifyPhoneNumber({
+        uid: 'dGVzdA',
+        verification_code: '999999',
+      });
+
+      expect(result).toEqual(errorResponse.response.data);
+    });
+
+    it('should handle network errors gracefully', async () => {
+      mockAxiosInstance.get.mockRejectedValue(new Error('Network error'));
+
+      const result = await service.verifyPhoneNumber({
+        uid: 'dGVzdA',
+        verification_code: '123456',
+      });
+
+      expect(result).toEqual({ message: 'An error occurred while verifying phone number.' });
+    });
+  });
 });

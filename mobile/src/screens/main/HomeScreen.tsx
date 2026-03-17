@@ -12,16 +12,20 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../contexts/ThemeContext';
 import useAuth from '../../hooks/useAuth';
 import CustomButton from '../../components/form/CustomButton';
 import AppHeader from '../../components/AppHeader';
+import { MainTabParamList } from '../../navigation/AppNavigation';
 
 const HomeScreen: React.FC = () => {
   const { t } = useTranslation();
   const { colors } = useTheme();
   const { user, logout } = useAuth();
+  const navigation = useNavigation<BottomTabNavigationProp<MainTabParamList>>();
 
   const handleLogout = async () => {
     try {
@@ -59,6 +63,7 @@ const HomeScreen: React.FC = () => {
           <View style={styles.actions}>
             <TouchableOpacity
               style={[styles.actionButton, { backgroundColor: colors.primary }]}
+              onPress={() => navigation.navigate('Dashboard')}
             >
               <Text style={styles.actionButtonText}>{t('home:quickActions.action1')}</Text>
             </TouchableOpacity>

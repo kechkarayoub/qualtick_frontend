@@ -143,6 +143,21 @@ class DeepLinkingService {
         }
       }
     }
+    else {
+      this.navigateToNotFound();
+    }
+  }
+
+  private navigateToNotFound() {
+    setTimeout(() => {
+      if (this.navigationRef?.current) {
+        try {
+          this.navigationRef.current.navigate('NotFound');
+        } catch (error) {
+          console.error('Navigation to NotFound failed:', error);
+        }
+      }
+    }, 100);
   }
 
   private navigateToResetPassword(params: ResetPasswordParams) {

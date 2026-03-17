@@ -5,7 +5,7 @@ import i18n from '../../i18n';
 import MainLayout from './MainLayout';
 
 // Mock dependencies
-jest.mock('../layout/MainHeader', () => {
+jest.mock('./MainHeader', () => {
   return function MockMainHeader({ onMenuClick }: { onMenuClick: () => void }) {
     return (
       <header data-testid="main-header">
@@ -17,13 +17,13 @@ jest.mock('../layout/MainHeader', () => {
   };
 });
 
-jest.mock('../layout/MainFooter', () => {
+jest.mock('./MainFooter', () => {
   return function MockMainFooter() {
     return <footer data-testid="main-footer">Main Footer</footer>;
   };
 });
 
-jest.mock('../layout/Sidebar', () => {
+jest.mock('./Sidebar', () => {
   return function MockSidebar({ 
     isOpen, 
     onClose 

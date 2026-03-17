@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import BaseModal from './BaseModal';
-import { useModalContent, useCompanyInfo } from '../../hooks/useModalContent';
+import { useModalContent } from '../../hooks/useModalContent';
 import { useTheme } from '../../contexts/ThemeContext';
 
 interface AboutUsModalProps {
@@ -24,7 +24,6 @@ const AboutUsModal: React.FC<AboutUsModalProps> = ({ isOpen, onClose }) => {
   const { t, i18n } = useTranslation();
   const { colors } = useTheme();
   const { content, loading, error } = useModalContent('about-us');
-  const companyInfo = useCompanyInfo();
 
   const formatDate = (date: Date): string => {
     return new Intl.DateTimeFormat(i18n.language, {

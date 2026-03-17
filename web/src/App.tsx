@@ -37,6 +37,7 @@ import EmailVerificationPage from './pages/auth/EmailVerificationPage';
 import HomePage from './pages/home/HomePage';
 import SettingsPage from './pages/settings/SettingsPage';
 import ProfilePage from './pages/profile/ProfilePage';
+import DashboardPage from './pages/dashboard/DashboardPage';
 import PageNotFound from './pages/PageNotFound';
 
 // Import hooks
@@ -118,6 +119,7 @@ const AppRoutes: React.FC = () => {
             <MainLayout>
               <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="dashboard" element={<DashboardPage />} />
                 <Route path="settings" element={<SettingsPage />} />
                 <Route path="profile" element={<ProfilePage />} />
                 <Route path="*" element={<PageNotFound />} />

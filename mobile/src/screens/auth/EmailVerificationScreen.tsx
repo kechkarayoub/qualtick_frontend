@@ -22,7 +22,7 @@ import CustomButton from '../../components/form/CustomButton';
 import AppHeader from '../../components/AppHeader';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import { useTheme } from '../../contexts/ThemeContext';
-import AuthenticatedApiService from '../../services/AuthenticatedApiService';
+import UnauthenticatedApiService from '../../services/UnauthenticatedApiService';
 import Toast from 'react-native-toast-message';
 
 type EmailVerificationScreenNavigationProp = StackNavigationProp<AuthStackParamList, 'VerifyEmail'>;
@@ -45,7 +45,7 @@ const EmailVerificationScreen: React.FC = () => {
   const [isResending, setIsResending] = useState(false);
   const [isResent, setIsResent] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
-  const apiService = AuthenticatedApiService.getInstance();
+  const apiService = UnauthenticatedApiService.getInstance();
 
   // Get uid and token from route params
   const { uid, token } = route.params || { uid: '', token: '' };

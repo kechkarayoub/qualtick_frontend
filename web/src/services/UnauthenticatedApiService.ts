@@ -156,6 +156,25 @@ class UnauthenticatedApiService {
       return null;
     }
   }
+
+  /**
+   * Verify phone number
+   */
+  public async verifyPhoneNumber(params: {
+    uid: string;
+    verification_code: string;
+    resend_verification_phone_number_code?: boolean;
+  }): Promise<any> {
+    try {
+      const response = await this.axiosInstance.get('/accounts/verify-phone-number/', { params });
+      return response.data;
+    } catch (error: any) {
+      if (error.response && error.response.data) {
+        return error.response.data;
+      }
+      return { message: 'An error occurred while verifying phone number.' };
+    }
+  }
 }
 
 export default UnauthenticatedApiService;

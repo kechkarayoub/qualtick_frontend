@@ -19,7 +19,6 @@ import {
   SocialLoginCredentials,
   SocialRegisterCredentials,
   AuthResponse,
-  ConsentData,
 } from '../types/auth.types';
 
 // Create service instances

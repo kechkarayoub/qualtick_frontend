@@ -312,6 +312,7 @@ class AuthenticatedApiService {
     }
     return !!accessToken;
   }
+
 }
 
 export default AuthenticatedApiService;
