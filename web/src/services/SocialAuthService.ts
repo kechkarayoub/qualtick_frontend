@@ -30,7 +30,9 @@ class SocialAuthService {
   private static instance: SocialAuthService;
 
   private constructor() {
-    this.initializeGoogleSignIn();
+    if(this.isGoogleLoginEnabled()) {
+      this.initializeGoogleSignIn();
+    }
   }
 
   public static getInstance(): SocialAuthService {

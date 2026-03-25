@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
   <application
     android:name=".MainApplication"
@@ -38,5 +41,25 @@
         <data android:scheme="qualitick" />
       </intent-filter>
     </activity>
+
+    <!-- FCM: handles displaying notifications when the app is in the foreground -->
+    <service
+      android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
+      android:exported="false">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+
+    <!-- FCM: default notification channel for Android 8+ -->
+    <meta-data
+      android:name="com.google.firebase.messaging.default_notification_channel_id"
+      android:value="qualitick_default_channel" />
+
+    <!-- FCM: default notification icon (use your app icon or a dedicated icon) -->
+    <meta-data
+      android:name="com.google.firebase.messaging.default_notification_icon"
+      android:resource="@mipmap/ic_launcher" />
+
   </application>
 </manifest>

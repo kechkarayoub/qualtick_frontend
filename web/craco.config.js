@@ -1,22 +1,35 @@
 module.exports = {
   webpack: {
     configure: (webpackConfig) => {
-      // Find the source-map-loader rule and modify it to ignore react-datepicker warnings
-      const sourceMapLoaderRule = webpackConfig.module.rules.find(
-        rule => rule.loader && rule.loader.includes('source-map-loader')
-      );
+      const rules = webpackConfig.module?.rules ?? [];
 
-      if (sourceMapLoaderRule) {
-        sourceMapLoaderRule.options = {
-          ...sourceMapLoaderRule.options,
-          filterSourceMappingUrl: (url, resourcePath) => {
-            // Ignore source map warnings from react-datepicker
+      const matchesSourceMapLoader = (entry) =>
+        typeof entry?.loader === 'string' && entry.loader.includes('source-map-loader');
+
+      const patchLoaderOptions = (entry) => {
+        entry.options = {
+          ...(entry.options || {}),
+          filterSourceMappingUrl: (_url, resourcePath) => {
             if (resourcePath.includes('react-datepicker')) {
               return false;
             }
             return true;
-          }
+          },
         };
+      };
+
+      for (const rule of rules) {
+        if (matchesSourceMapLoader(rule)) {
+          patchLoaderOptions(rule);
+        }
+
+        if (Array.isArray(rule.use)) {
+          for (const useEntry of rule.use) {
+            if (matchesSourceMapLoader(useEntry)) {
+              patchLoaderOptions(useEntry);
+            }
+          }
+        }
       }
 
       return webpackConfig;

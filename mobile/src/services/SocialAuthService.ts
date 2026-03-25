@@ -45,7 +45,9 @@ class SocialAuthService {
    * Initialize social auth services
    */
   private async initializeServices(): Promise<void> {
-    await this.initializeGoogle();
+    if(this.isGoogleSignInAvailable()) {
+      await this.initializeGoogle();
+    }
   }
 
   /**

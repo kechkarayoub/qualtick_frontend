@@ -1,0 +1,12 @@
+diff --git a/node_modules/@react-native-google-signin/google-signin/src/signIn/GoogleSignin.ts b/node_modules/@react-native-google-signin/google-signin/src/signIn/GoogleSignin.ts
+index d30dede..f0ca332 100644
+--- a/node_modules/@react-native-google-signin/google-signin/src/signIn/GoogleSignin.ts
++++ b/node_modules/@react-native-google-signin/google-signin/src/signIn/GoogleSignin.ts
+@@ -1,4 +1,7 @@
+ import { Platform } from 'react-native';
++
++declare const process: { env: { NODE_ENV?: string } };
++
+ import {
+   AddScopesParams,
+   CancelledResponse,

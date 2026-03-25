@@ -42,7 +42,6 @@ import PageNotFound from './pages/PageNotFound';
 
 // Import hooks
 import useAuth from './hooks/useAuth';
-import useRTL from './hooks/useRTL';
 
 // Styles
 import 'react-toastify/dist/ReactToastify.css';
@@ -66,7 +65,6 @@ const AppRoutes: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth();
   const { t, i18n, ready } = useTranslation();
   const location = useLocation();
-  const { isRTL } = useRTL();
 
   useEffect(() => {
     const pageTitle = config.app.name + ' - ' + getPageTitle(location.pathname, t);

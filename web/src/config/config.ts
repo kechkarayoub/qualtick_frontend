@@ -9,6 +9,7 @@ export interface Config {
     storageBucket: string;
     messagingSenderId: string;
     appId: string;
+    vapidKey: string;
   };
   app: {
     name: string;
@@ -26,6 +27,7 @@ const config: Config = {
     storageBucket: process.env.REACT_APP_FIREBASE_WEB_STORAGE_BUCKET || '',
     messagingSenderId: process.env.REACT_APP_FIREBASE_WEB_MESSAGING_SENDER_ID || '',
     appId: process.env.REACT_APP_FIREBASE_WEB_APP_ID || '',
+    vapidKey: process.env.REACT_APP_FIREBASE_VAPID_KEY || '',
   },
   app: {
     name: process.env.REACT_APP_NAME || 'Qualitick',

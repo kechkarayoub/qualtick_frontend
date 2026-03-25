@@ -53,9 +53,11 @@
     "yup": "^1.7.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "prestart": "node scripts/generate-sw.js",
+    "start": "cross-env BROWSERSLIST_IGNORE_OLD_DATA=true craco start",
+    "prebuild": "node scripts/generate-sw.js",
+    "build": "cross-env BROWSERSLIST_IGNORE_OLD_DATA=true craco build",
+    "test": "cross-env BROWSERSLIST_IGNORE_OLD_DATA=true craco test",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "start_craco": "craco start",
@@ -94,8 +96,10 @@
     "@craco/craco": "^7.1.0",
     "@types/react-image-crop": "^9.0.2",
     "@types/styled-components": "^5.1.34",
+    "cross-env": "7.0.3",
     "eslint": "^8.57.0",
     "identity-obj-proxy": "^3.0.0",
+    "postcss-normalize": "^13.0.1",
     "pwa-asset-generator": "^8.1.2"
   }
 }

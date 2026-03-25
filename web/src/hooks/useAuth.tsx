@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 
 import AuthenticatedApiService from '../services/AuthenticatedApiService';
+import FCMService from '../services/FCMService';
 import SecureStorageService from '../services/SecureStorageService';
 import WebSocketService from '../services/WebSocketService';
 
@@ -106,6 +107,7 @@ interface AuthResponse {
 const apiService = AuthenticatedApiService.getInstance();
 const secureStorage = SecureStorageService.getInstance();
 const webSocketService = WebSocketService.getInstance();
+const fcmService = FCMService.getInstance();
 
 const useAuth = () => {
   const { t } = useTranslation();
@@ -199,6 +201,8 @@ const useAuth = () => {
       // Update user data in cache
       queryClient.setQueryData(['user', 'profile'], data.user);
       
+      fcmService.initialize();
+
       // // Connect WebSocket
       // await webSocketService.connect();
       
@@ -274,6 +278,8 @@ const useAuth = () => {
         // Update user data in cache
         queryClient.setQueryData(['user', 'profile'], data.user);
         
+        fcmService.initialize();
+
         // // Connect WebSocket
         // await webSocketService.connect();
 
@@ -292,6 +298,8 @@ const useAuth = () => {
 
   // Logout function
   const logout = useCallback(async (logoutAllDevices: boolean = false) => {
+    await fcmService.deregisterToken();
+    fcmService.destroy();
     try {
       const data = {
         logout_all_devices: logoutAllDevices,
@@ -432,6 +440,8 @@ const useAuth = () => {
       // Update user data in cache
       queryClient.setQueryData(['user', 'profile'], data.user);
       
+      fcmService.initialize();
+
       // // Connect WebSocket
       // await webSocketService.connect();
       

@@ -11,6 +11,7 @@ import Toast from 'react-native-toast-message';
 import { useTranslation } from 'react-i18next';
 
 import AuthenticatedApiService from '../services/AuthenticatedApiService';
+import FCMService from '../services/FCMService';
 import SecureStorageService from '../services/SecureStorageService';
 import {
   LoginCredentials,
@@ -24,6 +25,7 @@ import {
 // Create service instances
 const apiService = AuthenticatedApiService.getInstance();
 const secureStorage = SecureStorageService.getInstance();
+const fcmService = FCMService.getInstance();
 
 // ---------------------------
 // Internal implementation hook
@@ -117,6 +119,8 @@ const useProvideAuth = () => {
       // Update user data in cache
       queryClient.setQueryData(['user', 'profile'], data.user);
       
+      fcmService.initialize();
+
       const message = useSessionStorage 
         ? t('messages:loginSuccess')
         : t('messages:loginSuccessRemembered');
@@ -239,6 +243,8 @@ const useProvideAuth = () => {
         // Update user data in cache
         queryClient.setQueryData(['user', 'profile'], data.user);
 
+        fcmService.initialize();
+
         Toast.show({
           type: 'success',
           text1: data.is_new_user ? t('auth:register.title') : t('auth:login.welcomeBack'),
@@ -294,6 +300,8 @@ const useProvideAuth = () => {
       // Update user data in cache
       queryClient.setQueryData(['user', 'profile'], data.user);
       
+      fcmService.initialize();
+
       Toast.show({
         type: 'success',
         text1: t('auth:login.welcomeBack'),
@@ -312,6 +320,7 @@ const useProvideAuth = () => {
 
   // Logout function
   const logout = useCallback(async (logoutAllDevices: boolean = false) => {
+    await fcmService.deregisterToken();
     try {
       const data = {
         logout_all_devices: logoutAllDevices,

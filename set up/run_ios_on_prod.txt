@@ -1,0 +1,1 @@
+Change aps-environment in QualitickMobile.entitlements to production before App Store submission
