@@ -39,6 +39,8 @@ import SettingsPage from './pages/settings/SettingsPage';
 import ProfilePage from './pages/profile/ProfilePage';
 import DashboardPage from './pages/dashboard/DashboardPage';
 import PageNotFound from './pages/PageNotFound';
+import ForbiddenPage from './pages/ForbiddenPage';
+import PermissionsPage from './pages/permissions/PermissionsPage';
 
 // Import hooks
 import useAuth from './hooks/useAuth';
@@ -120,6 +122,15 @@ const AppRoutes: React.FC = () => {
                 <Route path="dashboard" element={<DashboardPage />} />
                 <Route path="settings" element={<SettingsPage />} />
                 <Route path="profile" element={<ProfilePage />} />
+                <Route
+                  path="permissions"
+                  element={
+                    <ProtectedRoute permission="manage_permissions">
+                      <PermissionsPage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route path="forbidden" element={<ForbiddenPage />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
             </MainLayout>

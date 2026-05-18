@@ -26,6 +26,8 @@ export interface User {
   user_cin?: string;
   user_country?: string;
   user_gender?: string;
+  permissions?: string[];
+  is_superuser?: boolean;
 }
 
 export interface UserProfileUpdate {

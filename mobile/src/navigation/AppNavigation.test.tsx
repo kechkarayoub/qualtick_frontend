@@ -68,6 +68,21 @@ jest.mock('../hooks/useAuth', () => ({
 	default: () => mockUseAuth(),
 }));
 
+// Mock usePermissions to break the import chain:
+// AppNavigation → usePermissions → AuthenticatedApiService → react-native-toast-message (ESM)
+jest.mock('../hooks/usePermissions', () => ({
+	__esModule: true,
+	default: () => ({
+		hasPermission: jest.fn(() => false),
+		hasAnyPermission: jest.fn(() => false),
+		hasAllPermissions: jest.fn(() => false),
+		isSuperuser: false,
+		permissions: [],
+		refreshPermissions: jest.fn(),
+		isRefreshing: false,
+	}),
+}));
+
 jest.mock('../contexts/ThemeContext', () => ({
 	useTheme: () => mockUseTheme(),
 }));

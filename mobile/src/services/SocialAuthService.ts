@@ -45,7 +45,11 @@ class SocialAuthService {
    * Initialize social auth services
    */
   private async initializeServices(): Promise<void> {
-    if(this.isGoogleSignInAvailable()) {
+    // Check enableGoogleLogin directly here rather than isGoogleSignInAvailable(),
+    // because isGoogleSignInAvailable() also checks this.isGoogleConfigured which
+    // is only set to true *after* initializeGoogle() completes — calling it before
+    // initialisation would always return false and configure would never run.
+    if (config.features.enableGoogleLogin) {
       await this.initializeGoogle();
     }
   }

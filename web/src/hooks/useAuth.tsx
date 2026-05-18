@@ -35,6 +35,8 @@ export interface User {
   isEmailVerified?: boolean;
   createdAt?: string;
   updatedAt?: string;
+  permissions?: string[];
+  is_superuser?: boolean;
 }
 
 export interface UserProfileUpdate {

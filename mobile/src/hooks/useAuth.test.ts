@@ -29,6 +29,36 @@ const mockQueryClient = {
 const mockUseQuery = jest.fn();
 const mockUseMutation = jest.fn();
 
+// Mock FCMService to cut the entire chain of native module imports:
+// useAuth → FCMService → @react-native-firebase/messaging + react-native-device-info
+jest.mock('../services/FCMService', () => ({
+	__esModule: true,
+	default: {
+		getInstance: jest.fn(() => ({
+			initialize: jest.fn().mockResolvedValue(undefined),
+			deregisterToken: jest.fn().mockResolvedValue(undefined),
+			onMessage: jest.fn(() => jest.fn()), // returns an unsubscribe fn
+			destroy: jest.fn(),
+		})),
+	},
+}));
+
+// @react-native-firebase/messaging ships as ESM; mock it to avoid transform issues
+// and to prevent native-module initialisation in the test environment.
+jest.mock('@react-native-firebase/messaging', () => ({
+	__esModule: true,
+	default: jest.fn(() => ({
+		requestPermission: jest.fn().mockResolvedValue(1),
+		getToken: jest.fn().mockResolvedValue('fcm-token'),
+		onMessage: jest.fn(() => jest.fn()),
+		onNotificationOpenedApp: jest.fn(() => jest.fn()),
+		getInitialNotification: jest.fn().mockResolvedValue(null),
+		setBackgroundMessageHandler: jest.fn(),
+		hasPermission: jest.fn().mockResolvedValue(1),
+		AuthorizationStatus: { AUTHORIZED: 1, PROVISIONAL: 2 },
+	})),
+}));
+
 jest.mock('react-native-toast-message', () => ({
 	__esModule: true,
 	default: {

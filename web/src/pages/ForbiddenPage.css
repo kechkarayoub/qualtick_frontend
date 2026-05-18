@@ -1,0 +1,50 @@
+.forbidden-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--color-background, #f5f5f5);
+}
+
+.forbidden-page__content {
+  text-align: center;
+  max-width: 480px;
+}
+
+.forbidden-page__code {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--color-error, #e53e3e);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.forbidden-page__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text, #1a1a1a);
+  margin-bottom: 0.75rem;
+}
+
+.forbidden-page__message {
+  font-size: 1rem;
+  color: var(--color-text-secondary, #666);
+  margin-bottom: 2rem;
+}
+
+.forbidden-page__btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: var(--color-primary, #3182ce);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.forbidden-page__btn:hover {
+  opacity: 0.85;
+}

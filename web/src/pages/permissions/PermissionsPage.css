@@ -1,0 +1,171 @@
+.permissions-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.permissions-page__header {
+  margin-bottom: 1.5rem;
+}
+
+.permissions-page__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text, #1a1a1a);
+  margin: 0 0 0.25rem;
+}
+
+.permissions-page__subtitle {
+  color: var(--color-text-secondary, #666);
+  margin: 0;
+}
+
+.permissions-page__search-row {
+  margin-bottom: 1rem;
+}
+
+.permissions-page__search {
+  width: 100%;
+  max-width: 360px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: 0.375rem;
+  font-size: 0.9rem;
+  background: var(--color-surface, #fff);
+  color: var(--color-text, #1a1a1a);
+}
+
+.permissions-page__table-wrap {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border, #e2e8f0);
+}
+
+.permissions-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.permissions-page__th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  background: var(--color-surface-raised, #f7fafc);
+  border-bottom: 2px solid var(--color-border, #e2e8f0);
+  white-space: nowrap;
+}
+
+.permissions-page__th--perm {
+  text-align: center;
+  max-width: 120px;
+}
+
+.permissions-page__th--actions {
+  min-width: 140px;
+}
+
+.permissions-page__perm-label {
+  display: block;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.permissions-page__row {
+  transition: background 0.15s;
+}
+
+.permissions-page__row:hover {
+  background: var(--color-surface-hover, #edf2f7);
+}
+
+.permissions-page__row--dirty {
+  background: var(--color-warning-light, #fffbeb);
+}
+
+.permissions-page__td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+  vertical-align: middle;
+}
+
+.permissions-page__td--check {
+  text-align: center;
+}
+
+.permissions-page__td--empty {
+  text-align: center;
+  color: var(--color-text-secondary, #888);
+  padding: 2rem;
+}
+
+.permissions-page__user-name {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.permissions-page__user-meta {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary, #888);
+}
+
+.permissions-page__badge {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.permissions-page__badge--super {
+  background: var(--color-warning, #ed8936);
+  color: #fff;
+}
+
+.permissions-page__checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--color-primary, #3182ce);
+}
+
+.permissions-page__checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.permissions-page__btn {
+  padding: 0.35rem 0.85rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-right: 0.4rem;
+}
+
+.permissions-page__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.permissions-page__btn--save {
+  background: var(--color-primary, #3182ce);
+  color: #fff;
+}
+
+.permissions-page__btn--save:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.permissions-page__btn--cancel {
+  background: var(--color-surface-raised, #f0f0f0);
+  color: var(--color-text, #1a1a1a);
+}
+
+.permissions-page__btn--cancel:hover:not(:disabled) {
+  opacity: 0.75;
+}

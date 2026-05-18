@@ -34,6 +34,27 @@ jest.mock('../hooks/useAuthenticatedWebSocket', () => ({
   default: () => {},
 }));
 
+// ---------------------------------------------------------------------------
+// Mock usePermissions so permission-prop tests can control the returned state
+// ---------------------------------------------------------------------------
+const mockPermissionState = {
+  isSuperuser: false,
+  permissions: [] as string[],
+};
+
+jest.mock('../hooks/usePermissions', () => ({
+  __esModule: true,
+  // Return helpers that read from the shared mockPermissionState object
+  default: () => ({
+    hasPermission: (codename: string) =>
+      mockPermissionState.isSuperuser || mockPermissionState.permissions.includes(codename),
+    hasAnyPermission: (codenames: string[]) =>
+      mockPermissionState.isSuperuser || codenames.some((c) => mockPermissionState.permissions.includes(c)),
+    hasAllPermissions: (codenames: string[]) =>
+      mockPermissionState.isSuperuser || codenames.every((c) => mockPermissionState.permissions.includes(c)),
+  }),
+}));
+
 // Mock LoadingSpinner
 jest.mock('./LoadingSpinner', () => ({
   __esModule: true,
@@ -62,6 +83,9 @@ describe('ProtectedRoute', () => {
     jest.clearAllMocks();
     mockIsAuthenticated.mockReturnValue(true);
     mockIsLoading.mockReturnValue(false);
+    // Reset permission state so permission-tests start with a clean slate
+    mockPermissionState.isSuperuser = false;
+    mockPermissionState.permissions = [];
   });
 
   describe('Authenticated State', () => {
@@ -596,5 +620,179 @@ describe('ProtectedRoute', () => {
 
       expect(screen.getByTestId('protected-content')).toBeInTheDocument();
     });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Permission-prop Tests
+// These tests exercise the `permission`, `anyOf`, and `allOf` props that were
+// added to ProtectedRoute to enforce fine-grained access control beyond
+// simple authentication.
+// ---------------------------------------------------------------------------
+
+describe('ProtectedRoute — permission enforcement', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    // User is authenticated; permission state starts empty
+    mockIsAuthenticated.mockReturnValue(true);
+    mockIsLoading.mockReturnValue(false);
+    mockPermissionState.isSuperuser = false;
+    mockPermissionState.permissions = [];
+  });
+
+  const TestContent = () => <div data-testid="protected-content">Protected</div>;
+
+  // ---- single permission prop ---------------------------------------------
+
+  describe('permission prop', () => {
+    it('renders children when user holds the required codename', () => {
+      mockPermissionState.permissions = ['manage_permissions'];
+
+      render(
+        <MemoryRouter>
+          <ProtectedRoute permission="manage_permissions">
+            <TestContent />
+          </ProtectedRoute>
+        </MemoryRouter>,
+      );
+
+      expect(screen.getByTestId('protected-content')).toBeInTheDocument();
+    });
+
+    it('redirects to /forbidden when user lacks the required codename', () => {
+      render(
+        <MemoryRouter>
+          <ProtectedRoute permission="manage_permissions">
+            <TestContent />
+          </ProtectedRoute>
+        </MemoryRouter>,
+      );
+
+      // The mocked Navigate renders the destination as text
+      expect(screen.getByTestId('navigate-to')).toHaveTextContent('/forbidden');
+      expect(screen.queryByTestId('protected-content')).not.toBeInTheDocument();
+    });
+
+    it('superuser sees children without explicit permission grant', () => {
+      mockPermissionState.isSuperuser = true;
+
+      render(
+        <MemoryRouter>
+          <ProtectedRoute permission="manage_permissions">
+            <TestContent />
+          </ProtectedRoute>
+        </MemoryRouter>,
+      );
+
+      expect(screen.getByTestId('protected-content')).toBeInTheDocument();
+    });
+  });
+
+  // ---- anyOf prop ---------------------------------------------------------
+
+  describe('anyOf prop (OR-check)', () => {
+    it('renders children when user holds at least one codename', () => {
+      mockPermissionState.permissions = ['view_dashboard'];
+
+      render(
+        <MemoryRouter>
+          <ProtectedRoute anyOf={['manage_permissions', 'view_dashboard']}>
+            <TestContent />
+          </ProtectedRoute>
+        </MemoryRouter>,
+      );
+
+      expect(screen.getByTestId('protected-content')).toBeInTheDocument();
+    });
+
+    it('redirects to /forbidden when user holds none of the codenames', () => {
+      render(
+        <MemoryRouter>
+          <ProtectedRoute anyOf={['manage_permissions', 'manage_users']}>
+            <TestContent />
+          </ProtectedRoute>
+        </MemoryRouter>,
+      );
+
+      expect(screen.getByTestId('navigate-to')).toHaveTextContent('/forbidden');
+    });
+
+    it('superuser always passes the anyOf check', () => {
+      mockPermissionState.isSuperuser = true;
+
+      render(
+        <MemoryRouter>
+          <ProtectedRoute anyOf={['manage_permissions']}>
+            <TestContent />
+          </ProtectedRoute>
+        </MemoryRouter>,
+      );
+
+      expect(screen.getByTestId('protected-content')).toBeInTheDocument();
+    });
+  });
+
+  // ---- allOf prop ---------------------------------------------------------
+
+  describe('allOf prop (AND-check)', () => {
+    it('renders children when user holds all codenames', () => {
+      mockPermissionState.permissions = ['view_audit_logs', 'view_dashboard'];
+
+      render(
+        <MemoryRouter>
+          <ProtectedRoute allOf={['view_audit_logs', 'view_dashboard']}>
+            <TestContent />
+          </ProtectedRoute>
+        </MemoryRouter>,
+      );
+
+      expect(screen.getByTestId('protected-content')).toBeInTheDocument();
+    });
+
+    it('redirects to /forbidden when user is missing one codename', () => {
+      mockPermissionState.permissions = ['view_audit_logs'];
+
+      render(
+        <MemoryRouter>
+          <ProtectedRoute allOf={['view_audit_logs', 'manage_permissions']}>
+            <TestContent />
+          </ProtectedRoute>
+        </MemoryRouter>,
+      );
+
+      expect(screen.getByTestId('navigate-to')).toHaveTextContent('/forbidden');
+    });
+
+    it('superuser always passes the allOf check', () => {
+      mockPermissionState.isSuperuser = true;
+
+      render(
+        <MemoryRouter>
+          <ProtectedRoute allOf={['manage_permissions', 'manage_users']}>
+            <TestContent />
+          </ProtectedRoute>
+        </MemoryRouter>,
+      );
+
+      expect(screen.getByTestId('protected-content')).toBeInTheDocument();
+    });
+  });
+
+  // ---- unauthenticated user takes priority ---------------------------------
+
+  it('redirects to login (not forbidden) when unauthenticated even with permission prop', () => {
+    mockIsAuthenticated.mockReturnValue(false);
+
+    render(
+      <MemoryRouter>
+        <ProtectedRoute permission="manage_permissions">
+          <TestContent />
+        </ProtectedRoute>
+      </MemoryRouter>,
+    );
+
+    // Should go to login, not /forbidden
+    expect(mockNavigate).toHaveBeenCalledWith('/auth/login', expect.any(Object));
+    expect(screen.queryByTestId('navigate-to')).not.toHaveTextContent('/forbidden');
   });
 });

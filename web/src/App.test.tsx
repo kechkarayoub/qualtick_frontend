@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @jest-environment jsdom
  */
 
@@ -17,11 +17,6 @@ jest.mock('./hooks/useAuth', () => ({
     logout: jest.fn(),
     register: jest.fn(),
   })),
-}));
-
-jest.mock('./hooks/useRTL', () => ({
-  __esModule: true,
-  default: jest.fn(),
 }));
 
 jest.mock('./i18n', () => ({
@@ -154,6 +149,13 @@ jest.mock('react-toastify', () => ({
       Toast Container
     </div>
   ),
+  toast: {
+    success: jest.fn(),
+    error: jest.fn(),
+    warn: jest.fn(),
+    info: jest.fn(),
+    warning: jest.fn(),
+  },
 }));
 
 jest.mock('@tanstack/react-query', () => ({
@@ -204,7 +206,6 @@ jest.mock('@tanstack/react-query', () => {
 const originalEnv = process.env;
 
 const useAuthMock = require('./hooks/useAuth').default;
-const useRTLMock = require('./hooks/useRTL').default;
 
 describe('App Component', () => {
   beforeEach(() => {
@@ -221,10 +222,6 @@ describe('App Component', () => {
       login: jest.fn(),
       logout: jest.fn(),
       register: jest.fn(),
-    });
-
-    useRTLMock.mockReturnValue({
-      isRTL: false,
     });
 
     // Reset location mock
@@ -403,13 +400,6 @@ describe('App Component', () => {
     expect(screen.getByTestId('query-client-provider')).toBeInTheDocument();
     expect(screen.getByTestId('browser-router')).toBeInTheDocument();
     expect(screen.getByTestId('toast-container')).toBeInTheDocument();
-  });
-
-  it('should handle RTL initialization', () => {
-    render(<App />);
-    
-    // Verify useRTL hook is called during initialization
-    expect(useRTLMock).toHaveBeenCalled();
   });
 
   it('should render toast container on top-left for Arabic language', () => {

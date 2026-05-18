@@ -90,7 +90,7 @@ describe('Config', () => {
 
     it('should use default websocket endpoint when only host is provided', () => {
       process.env.REACT_APP_WS_BACKEND_HOST = 'ws.example.com';
-      delete process.env.REACT_APP_WS_BACKEND_PORT; // Ensure port is not set
+      delete process.env.REACT_APP_WS_BACKEND_PORT;
       
       jest.resetModules();
       const { default: newConfig } = require('./config');
@@ -99,7 +99,7 @@ describe('Config', () => {
     });
 
     it('should use default websocket endpoint when only port is provided', () => {
-      delete process.env.REACT_APP_WS_BACKEND_HOST; // Ensure host is not set
+      delete process.env.REACT_APP_WS_BACKEND_HOST;
       process.env.REACT_APP_WS_BACKEND_PORT = '8080';
       
       jest.resetModules();
@@ -115,6 +115,7 @@ describe('Config', () => {
       process.env.REACT_APP_FIREBASE_WEB_STORAGE_BUCKET = 'test.appspot.com';
       process.env.REACT_APP_FIREBASE_WEB_MESSAGING_SENDER_ID = '123456789';
       process.env.REACT_APP_FIREBASE_WEB_APP_ID = 'test-app-id';
+      process.env.REACT_APP_FIREBASE_VAPID_KEY = 'test-vapid-key';
 
       jest.resetModules();
       const { default: newConfig } = require('./config');
@@ -126,6 +127,7 @@ describe('Config', () => {
         storageBucket: 'test.appspot.com',
         messagingSenderId: '123456789',
         appId: 'test-app-id',
+        vapidKey: 'test-vapid-key',
       });
     });
 
@@ -143,27 +145,12 @@ describe('Config', () => {
 
   describe('Config Type Safety', () => {
     it('should match Config interface structure', () => {
-      // Type checking is done at compile time, but we can verify runtime structure
-      const expectedKeys = [
-        'backendEndpoint',
-        'wsEndpoint',
-        'firebase',
-        'app',
-      ];
-      
+      const expectedKeys = ['backendEndpoint', 'wsEndpoint', 'firebase', 'app'];
       expectedKeys.forEach(key => {
         expect(config).toHaveProperty(key);
       });
 
-      const expectedFirebaseKeys = [
-        'apiKey',
-        'authDomain',
-        'projectId',
-        'storageBucket',
-        'messagingSenderId',
-        'appId',
-      ];
-      
+      const expectedFirebaseKeys = ['apiKey', 'authDomain', 'projectId', 'storageBucket', 'messagingSenderId', 'appId'];
       expectedFirebaseKeys.forEach(key => {
         expect(config.firebase).toHaveProperty(key);
       });

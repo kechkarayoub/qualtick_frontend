@@ -26,6 +26,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 
 // Hooks
 import useAuth from '../hooks/useAuth';
+import usePermissions from '../hooks/usePermissions';
 import { useTheme } from '../contexts/ThemeContext';
 import config from '../config/config';
 
@@ -49,6 +50,7 @@ export type AuthStackParamList = {
 export type MainTabParamList = {
   Home: undefined;
   Dashboard: undefined;
+  Permissions: undefined;
   Profile: undefined;
   Settings: undefined;
 };
@@ -98,11 +100,15 @@ const AuthNavigator = () => {
 
 const MainNavigator = () => {
   const { colors } = useTheme();
+  // Destructure only the helpers needed for tab visibility decisions
+  const { hasPermission, isSuperuser } = usePermissions();
+  // The Permissions tab is shown only to superusers or users with `manage_permissions`
+  const canManagePermissions = isSuperuser || hasPermission('manage_permissions');
   
   return (
     <MainTab.Navigator
       screenOptions={{
-        headerShown: false, // We'll use custom header
+        headerShown: false,
         tabBarStyle: {
           backgroundColor: colors.surface,
           borderTopColor: colors.border,
@@ -127,6 +133,17 @@ const MainNavigator = () => {
           tabBarLabel: 'Dashboard',
         }}
       />
+      {/* Conditionally render the Permissions tab based on the permission check */}
+      {canManagePermissions && (
+        <MainTab.Screen
+          name="Permissions"
+          component={SettingsScreen}
+          options={{
+            title: 'Permissions',
+            tabBarLabel: 'Permissions',
+          }}
+        />
+      )}
       <MainTab.Screen 
         name="Profile" 
         component={ProfileScreen}
